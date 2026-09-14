@@ -8,8 +8,8 @@ function record(error: unknown) {
   lastCapturedError = { error, at: Date.now() };
 }
 
-// h3's HTTPError serializes to {"status":500,"unhandled":true,"message":"HTTPError"} —
-// no stack, no cause — so a plain console.error(error) reaches the log pipeline with
+// h3's HTTPError serializes to {"status":500,"unhandled":true,"message":"HTTPError"} -
+// no stack, no cause - so a plain console.error(error) reaches the log pipeline with
 // the failure detail stripped. Expand Error-like args into a string that keeps the
 // message, stack, and the full cause chain.
 const CAUSE_DEPTH_LIMIT = 5;
@@ -20,16 +20,12 @@ export function describeError(error: unknown): string {
   let current: unknown = error;
   for (let depth = 0; depth < CAUSE_DEPTH_LIMIT && current != null; depth++) {
     if (!(current instanceof Error)) {
-      parts.push(
-        typeof current === "string" ? current : safeStringify(current),
-      );
+      parts.push(typeof current === "string" ? current : safeStringify(current));
       break;
     }
     const label = depth === 0 ? "" : "caused by: ";
     const status = describeStatus(current);
-    parts.push(
-      `${label}${current.stack ?? `${current.name}: ${current.message}`}${status}`,
-    );
+    parts.push(`${label}${current.stack ?? `${current.name}: ${current.message}`}${status}`);
     current = current.cause;
   }
   return parts.join("\n").slice(0, DESCRIPTION_LENGTH_LIMIT);
@@ -56,8 +52,8 @@ function isErrorLike(value: unknown): value is Error {
   return value instanceof Error;
 }
 
-// Wrap console.error so errors logged by any layer — including h3's internal
-// unhandled-error logging, which this file cannot hook directly — are both
+// Wrap console.error so errors logged by any layer (including h3's internal
+// unhandled-error logging, which this file cannot hook directly) are both
 // recorded for consumeLastCapturedError and expanded before serialization.
 const originalConsoleError = console.error.bind(console);
 console.error = (...args: unknown[]) => {
@@ -70,9 +66,7 @@ console.error = (...args: unknown[]) => {
 };
 
 if (typeof globalThis.addEventListener === "function") {
-  globalThis.addEventListener("error", (event) =>
-    record((event as ErrorEvent).error ?? event),
-  );
+  globalThis.addEventListener("error", (event) => record((event as ErrorEvent).error ?? event));
   globalThis.addEventListener("unhandledrejection", (event) =>
     record((event as PromiseRejectionEvent).reason),
   );

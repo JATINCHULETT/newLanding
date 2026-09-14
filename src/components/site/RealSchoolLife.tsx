@@ -57,24 +57,24 @@ const GROUPS = [
     ],
   },
   {
-    id: "for-schools",
-    audience: "School Leaders",
+    id: "for-parents",
+    audience: "Parents",
     tint: "text-primary",
     items: [
       {
-        icon: BarChart3,
-        title: "JAAGR Insights",
-        body: "Monitor wellbeing trends across students, classrooms, grades and the entire school from one unified dashboard.",
+        icon: Sparkles,
+        title: "Dinner Conversation Prompts",
+        body: "Get weekly, non-confrontational conversation sparks that replace 'How was school? - Fine' with genuine connection.",
       },
       {
         icon: FileCheck2,
-        title: "CBSE-Ready Reporting",
-        body: "Generate structured reports and documentation that support school wellbeing initiatives and requirements.",
+        title: "Emotional Growth Milestones",
+        body: "Understand the positive emotional skills your child is practising in school, from grounding to emotional regulation.",
       },
       {
         icon: MonitorSmartphone,
-        title: "School Dashboard",
-        body: "Track programme implementation, participation and impact from one place.",
+        title: "Parent Guidance Guides",
+        body: "Access bite-sized, psychologist-backed insights on teenage stress, peer dynamics and exam anxiety.",
       },
     ],
   },
@@ -123,9 +123,7 @@ export function RealSchoolLife() {
                         >
                           <item.icon className="h-6 w-6" aria-hidden />
                         </span>
-                        <h4 className="relative mt-5 text-lg font-bold">
-                          {item.title}
-                        </h4>
+                        <h4 className="relative mt-5 text-lg font-bold">{item.title}</h4>
                         <p className="relative mt-2.5 text-sm leading-relaxed text-muted-foreground">
                           {item.body}
                         </p>
@@ -140,8 +138,8 @@ export function RealSchoolLife() {
 
         <Reveal delay={0.08}>
           <p className="mt-16 max-w-3xl text-base text-muted-foreground">
-            The student experience matters because it is what drives adoption
-            and daily skill building — not because there happens to be an app.
+            The student experience matters because it is what drives adoption and daily skill
+            building, not because there happens to be an app.
           </p>
         </Reveal>
       </div>

@@ -11,7 +11,6 @@ import { HowItWorks } from "@/components/site/HowItWorks";
 import { SchoolEcosystem } from "@/components/site/SchoolEcosystem";
 import { ProductExperience } from "@/components/site/ProductExperience";
 import { ImpactStory } from "@/components/site/ImpactStory";
-import { ImpactMetrics } from "@/components/site/ImpactMetrics";
 import { CBSESection } from "@/components/site/CBSESection";
 import { TrustSection } from "@/components/site/TrustSection";
 import { Founder } from "@/components/site/Founder";
@@ -19,7 +18,7 @@ import { FAQ } from "@/components/site/FAQ";
 import { DemoForm } from "@/components/site/DemoForm";
 import { Footer } from "@/components/site/Footer";
 
-const TITLE = "JAAGR Mind — Emotional Fitness System for Indian Schools";
+const TITLE = "JAAGR Mind: Emotional Fitness System for Indian Schools";
 const DESCRIPTION =
   "JAAGR Mind helps Indian schools notice students who need support earlier, equip every teacher to respond with confidence, and build emotional strength into everyday school life.";
 
@@ -41,7 +40,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main>
+      <main className="pb-20 sm:pb-24">
         <Hero />
         <Ticker />
         <ProblemSection />
@@ -52,7 +51,6 @@ function Index() {
         <SchoolEcosystem />
         <ProductExperience />
         <ImpactStory />
-        <ImpactMetrics />
         <CBSESection />
         <TrustSection />
         <Founder />

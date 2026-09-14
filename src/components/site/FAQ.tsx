@@ -8,7 +8,7 @@ import { OrganicDecorations } from "@/components/site/OrganicDecorations";
 const ITEMS = [
   {
     q: "Is this therapy or counselling?",
-    a: "No. JAAGR Mind is a preventive, skills-based system. It teaches emotional fitness the way schools teach physical fitness — through short, repeatable practice. When a student needs clinical support, the system helps the school notice earlier and escalate to the right professional.",
+    a: "No. JAAGR Mind is a preventive, skills-based system. It teaches emotional fitness the way schools teach physical fitness: through short, repeatable practice. When a student needs clinical support, the system helps the school notice earlier and escalate to the right professional.",
   },
   {
     q: "How much extra work is this for teachers?",
@@ -20,11 +20,11 @@ const ITEMS = [
   },
   {
     q: "How is student data handled?",
-    a: "Student-first by design. Data stays confidential, is visible only to authorised school staff, and is used to spot patterns and support students — never to label or rank them.",
+    a: "Student-first by design. Data stays confidential, is visible only to authorised school staff, and is used to spot patterns and support students, never to label or rank them.",
   },
   {
     q: "How long before a school sees results?",
-    a: "Most schools see clearer teacher confidence and earlier identification within one term. Culture-level change — calmer classrooms, fewer escalations — typically builds across an academic year.",
+    a: "Most schools see clearer teacher confidence and earlier identification within one term. Culture-level change (calmer classrooms, fewer escalations) typically builds across an academic year.",
   },
   {
     q: "What does rollout look like?",
@@ -51,8 +51,8 @@ export function FAQ() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-5 max-w-sm text-base leading-relaxed text-muted-foreground">
-              Still unsure? A 30-minute demo with your leadership team usually
-              answers everything else.
+              Still unsure? A 30-minute demo with your leadership team usually answers everything
+              else.
             </p>
           </Reveal>
         </div>

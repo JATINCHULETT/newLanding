@@ -30,8 +30,7 @@ const CARDS = [
     icon: School,
     title: "Built for Indian Schools",
     body: "Designed around academic pressure, family expectations, social dynamics and the everyday realities of Indian students.",
-    iconBg:
-      "bg-amber-100/70 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300",
+    iconBg: "bg-amber-100/70 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300",
     accentColor: "bg-amber-400/70",
   },
   {
@@ -51,10 +50,7 @@ const TRUST_PILLARS = [
 
 export function TrustSection() {
   return (
-    <section
-      id="what-jaagr-is"
-      className="relative overflow-hidden py-24 lg:py-32"
-    >
+    <section id="what-jaagr-is" className="relative overflow-hidden py-24 lg:py-32">
       {/* Abstract and organic decorative background elements */}
       <OrganicDecorations />
 
@@ -74,17 +70,14 @@ export function TrustSection() {
             <Reveal delay={0.06}>
               <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-[3.1rem]">
                 A complete wellbeing system{" "}
-                <span className="block text-gradient">
-                  for the whole school.
-                </span>
+                <span className="block text-gradient">for the whole school.</span>
               </h2>
             </Reveal>
 
             <Reveal delay={0.12}>
               <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                JAAGR brings together student skill-building, teacher
-                capability, parent engagement and school-wide insights in one
-                structured, school-ready programme.
+                JAAGR brings together student skill-building, teacher capability, parent engagement
+                and school-wide insights in one structured, school-ready programme.
               </p>
             </Reveal>
 
@@ -135,9 +128,7 @@ export function TrustSection() {
                       {c.title}
                     </h3>
 
-                    <div
-                      className={`mt-2.5 h-0.5 w-8 rounded-full ${c.accentColor}`}
-                    />
+                    <div className={`mt-2.5 h-0.5 w-8 rounded-full ${c.accentColor}`} />
 
                     <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
                       {c.body}

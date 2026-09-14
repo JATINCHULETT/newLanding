@@ -38,9 +38,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <ThemeContext.Provider
-      value={{ theme: mounted ? theme : "light", toggleTheme, setTheme }}
-    >
+    <ThemeContext.Provider value={{ theme: mounted ? theme : "light", toggleTheme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   );

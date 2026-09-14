@@ -31,9 +31,8 @@ export function ImpactMetrics() {
 
         <Reveal delay={0.1}>
           <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
-            Additional outcome measures — emotional awareness, teacher
-            confidence and focus — are tracked with partner schools and
-            published as they are validated.
+            Additional outcome measures (emotional awareness, teacher confidence and focus) are
+            tracked with partner schools and published as they are validated.
           </p>
         </Reveal>
       </div>

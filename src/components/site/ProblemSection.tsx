@@ -54,9 +54,8 @@ export function ProblemSection() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-5 text-lg text-muted-foreground">
-              The students who need support don&apos;t always ask for it — and
-              by the time a school notices, the moment for gentle, early help
-              has often passed.
+              The students who need support don&apos;t always ask for it, and by the time a school
+              notices, the moment for gentle, early help has often passed.
             </p>
           </Reveal>
         </div>
@@ -70,9 +69,7 @@ export function ProblemSection() {
                     <t.icon className="h-6 w-6" aria-hidden />
                   </span>
                   <h3 className="text-lg font-bold leading-snug">{t.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {t.body}
-                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{t.body}</p>
                 </article>
               </TiltCard>
             </Reveal>
@@ -92,10 +89,7 @@ export function ProblemSection() {
                   </span>
                 </div>
                 {i < FLOW.length - 1 && (
-                  <span
-                    aria-hidden
-                    className="hidden h-px flex-1 bg-primary/25 sm:block"
-                  />
+                  <span aria-hidden className="hidden h-px flex-1 bg-primary/25 sm:block" />
                 )}
               </div>
             ))}

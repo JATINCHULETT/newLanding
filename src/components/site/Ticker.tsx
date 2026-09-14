@@ -28,10 +28,7 @@ export function Ticker() {
               <span className="text-sm font-medium tracking-wide text-muted-foreground">
                 {item}
               </span>
-              <span
-                aria-hidden
-                className="h-1.5 w-1.5 rounded-full bg-primary/40"
-              />
+              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-primary/40" />
             </span>
           ))}
         </div>

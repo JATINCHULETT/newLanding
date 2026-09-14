@@ -45,8 +45,8 @@ export function ImpactStory() {
                   className="absolute -top-3 left-10 h-6 w-24 rounded-sm bg-mint/50"
                 />
                 <blockquote className="hand text-2xl leading-snug text-foreground sm:text-[1.7rem]">
-                  &ldquo;I&apos;ve noticed that Riya has become unusually quiet
-                  lately. Her work is slipping too.&rdquo;
+                  &ldquo;I&apos;ve noticed that Riya has become unusually quiet lately. Her work is
+                  slipping too.&rdquo;
                 </blockquote>
                 <figcaption className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                   Class teacher&apos;s observation note
@@ -99,9 +99,7 @@ export function ImpactStory() {
                     </span>
                     <div>
                       <p className="text-sm font-bold">{p.name}</p>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {p.body}
-                      </p>
+                      <p className="mt-1 text-sm text-muted-foreground">{p.body}</p>
                     </div>
                     <span className="ml-auto font-display text-2xl font-extrabold text-border">
                       {i + 1}

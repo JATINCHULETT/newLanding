@@ -20,10 +20,7 @@ export function SchoolEcosystem() {
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section
-      id="for-schools"
-      className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32"
-    >
+    <section id="for-schools" className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32">
       <div className="shell">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
@@ -38,9 +35,9 @@ export function SchoolEcosystem() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-5 text-lg text-muted-foreground">
-              JAAGR helps schools build a proactive wellbeing system — equipping
-              students with practical skills, teachers with confidence, parents
-              with guidance, and school leaders with meaningful insights.
+              JAAGR helps schools build a proactive wellbeing system, equipping students with
+              practical skills, teachers with confidence, parents with guidance, and school leaders
+              with meaningful insights.
             </p>
           </Reveal>
         </div>

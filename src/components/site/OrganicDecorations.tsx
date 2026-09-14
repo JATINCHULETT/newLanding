@@ -31,14 +31,7 @@ export function TopLeftDots({ className = "" }: { className?: string }) {
       className={`pointer-events-none select-none text-mint ${className}`}
     >
       {dots.map((d, i) => (
-        <circle
-          key={i}
-          cx={d.cx}
-          cy={d.cy}
-          r={d.r}
-          fill="currentColor"
-          fillOpacity={d.opacity}
-        />
+        <circle key={i} cx={d.cx} cy={d.cy} r={d.r} fill="currentColor" fillOpacity={d.opacity} />
       ))}
     </svg>
   );
@@ -80,11 +73,7 @@ export function LeftMiddleOrnament({ className = "" }: { className?: string }) {
  * 3. Right-middle: decorative dotted halftone pattern
  * Staggered lavender/lilac halftone dots cluster
  */
-export function RightMiddleHalftone({
-  className = "",
-}: {
-  className?: string;
-}) {
+export function RightMiddleHalftone({ className = "" }: { className?: string }) {
   const dots: { cx: number; cy: number; r: number; opacity: number }[] = [];
   const cols = 6;
   const rows = 10;
@@ -109,70 +98,56 @@ export function RightMiddleHalftone({
       className={`pointer-events-none select-none text-primary/35 ${className}`}
     >
       {dots.map((d, i) => (
-        <circle
-          key={i}
-          cx={d.cx}
-          cy={d.cy}
-          r={d.r}
-          fill="currentColor"
-          fillOpacity={d.opacity}
-        />
+        <circle key={i} cx={d.cx} cy={d.cy} r={d.r} fill="currentColor" fillOpacity={d.opacity} />
       ))}
     </svg>
   );
 }
 
 /**
- * 4. Top-right: abstract leaf/swoosh strokes
- * 3 radiant curved leaf / swoosh strokes fanning out gracefully (mint/teal)
+ * 4. Top-right: JAAGR Brand Spark Lines (Three Straight Bars)
+ * The signature 3 radiant straight pill bars from the official JAAGR logo mark
  */
-export function TopRightLeafStrokes({
-  className = "",
-}: {
-  className?: string;
-}) {
+export function JaagrThreeLines({ className = "", color }: { className?: string; color?: string }) {
   return (
     <svg
       aria-hidden="true"
-      viewBox="0 0 95 90"
+      viewBox="0 0 120 155"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`pointer-events-none select-none text-mint ${className}`}
+      className={`pointer-events-none select-none ${className}`}
+      style={color ? { color } : undefined}
     >
-      {/* Top curved stroke */}
-      <path
-        d="M24 64C36 50 56 34 84 28"
-        stroke="currentColor"
-        strokeWidth="4.5"
-        strokeLinecap="round"
-      />
-      {/* Middle curved stroke */}
-      <path
-        d="M12 44C28 32 50 18 78 8"
-        stroke="currentColor"
-        strokeWidth="4.5"
-        strokeLinecap="round"
-      />
-      {/* Lower stroke */}
-      <path
-        d="M36 78C48 66 66 54 90 50"
-        stroke="currentColor"
-        strokeWidth="3.8"
-        strokeLinecap="round"
-      />
+      <g transform="translate(-710, 2)">
+        {/* Top spark bar (~45 deg) */}
+        <path
+          d="M763.057,10.585C766.55,7.738 769.825,5.184 772.999,2.512C777.107,-0.947 779.485,-0.915 783.165,3.113C785.628,5.807 788.001,8.604 790.189,11.524C792.524,14.638 792.385,17.433 789.054,20.133C769.577,35.92 750.196,51.825 730.784,67.693C726.598,71.115 724.808,70.922 721.315,66.686C719.096,63.995 716.908,61.275 714.603,58.658C711.667,55.325 712.105,52.504 715.473,49.75C729.871,37.978 744.224,26.151 758.59,14.34C760.001,13.181 761.393,11.998 763.057,10.585Z"
+          fill="currentColor"
+        />
+        {/* Middle spark bar (~20 deg) */}
+        <path
+          d="M801.826,55.364C814.425,50.529 814.098,51.072 818.196,62.826C821.361,71.903 822.866,73.104 811.517,76.977C789.006,84.658 766.549,92.495 744.108,100.377C740.312,101.71 737.966,100.647 736.644,97.032C735.273,93.284 734.113,89.456 732.681,85.732C731.144,81.739 732.463,79.489 736.423,78.135C748.856,73.885 761.237,69.481 773.642,65.148C782.906,61.912 792.177,58.692 801.826,55.364Z"
+          fill="currentColor"
+        />
+        {/* Bottom spark bar (~5 deg) */}
+        <path
+          d="M802.085,136.559C798.699,148.083 798.663,148.217 787.467,145.207C770.781,140.72 754.182,135.906 737.476,131.492C733.228,130.37 732.047,128.005 732.93,124.196C733.829,120.315 734.925,116.473 736.09,112.662C737.183,109.083 739.525,107.535 743.349,108.592C761.925,113.726 780.496,118.876 799.102,123.897C803.235,125.013 804.396,127.511 803.526,131.364C803.161,132.984 802.663,134.573 802.085,136.559Z"
+          fill="currentColor"
+        />
+      </g>
     </svg>
   );
 }
+
+/** Legacy alias for backwards compatibility */
+export const TopRightLeafStrokes = JaagrThreeLines;
+export const JaagrBrandSpark = JaagrThreeLines;
 
 /**
  * 5. Bottom-right: organic blob / watercolor shape
  * Soft watercolor-like translucent organic splash in mint / emerald
  */
-export function BottomRightWatercolorBlob({
-  className = "",
-}: {
-  className?: string;
-}) {
+export function BottomRightWatercolorBlob({ className = "" }: { className?: string }) {
   return (
     <svg
       aria-hidden="true"
@@ -189,11 +164,7 @@ export function BottomRightWatercolorBlob({
           <stop offset="100%" stopColor="var(--color-mint)" stopOpacity="0" />
         </radialGradient>
         <radialGradient id="organic-blob-grad-2" cx="70%" cy="90%" r="60%">
-          <stop
-            offset="0%"
-            stopColor="var(--color-primary-soft)"
-            stopOpacity="0.2"
-          />
+          <stop offset="0%" stopColor="var(--color-primary-soft)" stopOpacity="0.2" />
           <stop offset="100%" stopColor="transparent" stopOpacity="0" />
         </radialGradient>
       </defs>
@@ -214,11 +185,7 @@ export function BottomRightWatercolorBlob({
  * 6. Bottom-left: abstract curved loop / organic line
  * Hand-drawn style loose continuous overlapping curved loop in soft lilac
  */
-export function BottomLeftCurvedLoop({
-  className = "",
-}: {
-  className?: string;
-}) {
+export function BottomLeftCurvedLoop({ className = "" }: { className?: string }) {
   return (
     <svg
       aria-hidden="true"
@@ -290,10 +257,10 @@ export function OrganicDecorations({
         </div>
       )}
 
-      {/* 4. Top-right: abstract leaf/swoosh strokes */}
+      {/* 4. Top-right: JAAGR signature brand three straight spark lines */}
       {showTopRightLeafStrokes && (
-        <div className="absolute right-4 top-4 sm:right-10 sm:top-8">
-          <TopRightLeafStrokes className="w-14 sm:w-18 md:w-22 opacity-80" />
+        <div className="absolute right-4 top-4 sm:right-8 sm:top-8">
+          <JaagrThreeLines className="w-14 sm:w-18 md:w-24 text-primary/70 dark:text-mint/80 transition-transform duration-500 hover:scale-110" />
         </div>
       )}
 

@@ -37,9 +37,8 @@ export function CBSESection() {
               </Reveal>
               <Reveal delay={0.12}>
                 <p className="mt-5 max-w-lg text-base leading-relaxed text-indigo-foreground/70">
-                  Jaagr works alongside your existing wellbeing approach, giving
-                  your team the structure, materials and records that school
-                  wellbeing initiatives ask for.
+                  Jaagr works alongside your existing wellbeing approach, giving your team the
+                  structure, materials and records that school wellbeing initiatives ask for.
                 </p>
               </Reveal>
 

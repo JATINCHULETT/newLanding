@@ -6,12 +6,12 @@ import { cn } from "@/lib/utils";
 import { useTheme } from "@/hooks/use-theme";
 
 const LINKS = [
-  { label: "Why Jaagr", href: "#why-jaagr" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "For Schools", href: "#for-schools" },
-  { label: "For Teachers", href: "#for-teachers" },
-  { label: "For Students", href: "#for-students" },
-  { label: "About Us", href: "#about-us" },
+  { label: "Why Jaagr", href: "/#why-jaagr" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "For Students", href: "/students" },
+  { label: "For Teachers", href: "/teachers" },
+  { label: "For Parents", href: "/parents" },
+  { label: "About Us", href: "/#about-us" },
 ];
 
 export function Navbar() {
@@ -50,7 +50,7 @@ export function Navbar() {
             scrolled ? "h-14" : "h-20",
           )}
         >
-          <a href="#top" className="shrink-0">
+          <a href="/" className="shrink-0">
             <Logo />
           </a>
 
@@ -74,7 +74,7 @@ export function Navbar() {
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
               title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card/80 text-foreground transition-all duration-300 hover:scale-105 hover:bg-secondary active:scale-95"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card/80 text-foreground transition-all duration-300 hover:scale-105 hover:bg-secondary active:scale-95 cursor-pointer"
             >
               {theme === "dark" ? (
                 <Sun className="h-4.5 w-4.5 text-amber-400 transition-transform duration-300" />
@@ -84,7 +84,7 @@ export function Navbar() {
             </button>
 
             <a
-              href="#book-demo"
+              href="/#book-demo"
               className="group hidden items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-0.5 sm:inline-flex"
             >
               Book a School Demo
@@ -96,7 +96,7 @@ export function Navbar() {
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground cursor-pointer lg:hidden"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -106,65 +106,59 @@ export function Navbar() {
 
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:hidden"
-          >
-            <div className="shell pb-6 pt-4">
-              <div className="surface overflow-hidden p-2">
-                <ul className="flex flex-col">
-                  {LINKS.map((l, i) => (
-                    <motion.li
-                      key={l.href}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.05 + i * 0.04 }}
-                    >
-                      <a
-                        href={l.href}
-                        onClick={() => setOpen(false)}
-                        className="block rounded-xl px-4 py-3 text-base font-medium text-foreground transition-colors hover:bg-secondary"
+          <>
+            {/* Backdrop overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setOpen(false)}
+              className="fixed inset-0 top-14 sm:top-20 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+            />
+
+            {/* Menu drawer */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="relative z-50 lg:hidden"
+            >
+              <div className="shell pb-6 pt-2">
+                <div className="surface overflow-hidden p-3 shadow-2xl border border-border/80 bg-background/95 backdrop-blur-2xl">
+                  <ul className="flex flex-col">
+                    {LINKS.map((l, i) => (
+                      <motion.li
+                        key={l.href}
+                        initial={{ opacity: 0, x: -8 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.03 + i * 0.03 }}
                       >
-                        {l.label}
-                      </a>
-                    </motion.li>
-                  ))}
-                </ul>
+                        <a
+                          href={l.href}
+                          onClick={() => setOpen(false)}
+                          className="block rounded-xl px-4 py-3 text-base font-medium text-foreground transition-colors hover:bg-secondary active:bg-secondary/80"
+                        >
+                          {l.label}
+                        </a>
+                      </motion.li>
+                    ))}
+                  </ul>
 
-                <div className="mt-2 flex items-center justify-between border-t border-border/80 px-4 py-3">
-                  <span className="text-sm font-medium text-muted-foreground">
-                    Theme
-                  </span>
-                  <button
-                    type="button"
-                    onClick={toggleTheme}
-                    className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-semibold text-foreground shadow-sm transition-colors hover:bg-secondary"
-                  >
-                    {theme === "dark" ? (
-                      <>
-                        <Sun className="h-4 w-4 text-amber-400" /> Light Mode
-                      </>
-                    ) : (
-                      <>
-                        <Moon className="h-4 w-4 text-primary" /> Dark Mode
-                      </>
-                    )}
-                  </button>
+                  <div className="mt-3 border-t border-border/80 pt-3">
+                    <a
+                      href="/#book-demo"
+                      onClick={() => setOpen(false)}
+                      className="flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3.5 text-base font-semibold text-primary-foreground shadow-md transition-all active:scale-[0.98]"
+                    >
+                      Book a School Demo <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
                 </div>
-
-                <a
-                  href="#book-demo"
-                  onClick={() => setOpen(false)}
-                  className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3.5 text-base font-semibold text-primary-foreground"
-                >
-                  Book a School Demo <ArrowRight className="h-4 w-4" />
-                </a>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>

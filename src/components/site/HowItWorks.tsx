@@ -37,10 +37,7 @@ const PHASES = [
 
 export function HowItWorks() {
   return (
-    <section
-      id="how-it-works"
-      className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32"
-    >
+    <section id="how-it-works" className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32">
       <OrganicDecorations />
       <div className="shell relative z-10">
         <div className="max-w-3xl">
@@ -54,9 +51,8 @@ export function HowItWorks() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-5 text-lg text-muted-foreground">
-              One structured programme. One school year. Jaagr works alongside
-              your school rather than becoming another programme teachers have
-              to manage.
+              One structured programme. One school year. Jaagr works alongside your school rather
+              than becoming another programme teachers have to manage.
             </p>
           </Reveal>
         </div>
@@ -67,16 +63,12 @@ export function HowItWorks() {
               <div className="surface p-7">
                 <p className="hand text-2xl text-primary">One school year</p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Three phases, sequenced around the academic calendar — prepare
-                  the school, activate daily practice, then understand what
-                  changed.
+                  Three phases, sequenced around the academic calendar: prepare the school, activate
+                  daily practice, then understand what changed.
                 </p>
                 <ul className="mt-6 space-y-3">
                   {PHASES.map((p) => (
-                    <li
-                      key={p.id}
-                      className="flex items-center gap-3 text-sm font-semibold"
-                    >
+                    <li key={p.id} className="flex items-center gap-3 text-sm font-semibold">
                       <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/12 text-xs text-primary">
                         {p.label.split(" ")[1]}
                       </span>
@@ -102,9 +94,7 @@ export function HowItWorks() {
                   <p className="text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">
                     {phase.label}
                   </p>
-                  <h3 className="mt-1 text-2xl font-extrabold">
-                    {phase.title}
-                  </h3>
+                  <h3 className="mt-1 text-2xl font-extrabold">{phase.title}</h3>
                 </Reveal>
 
                 <ul className="mt-5 space-y-3">

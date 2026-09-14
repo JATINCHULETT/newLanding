@@ -50,9 +50,7 @@ export function WhyJaagr() {
                     <c.icon className="h-6 w-6" aria-hidden />
                   </span>
                   <h3 className="text-lg font-bold">{c.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {c.body}
-                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{c.body}</p>
                 </article>
               </TiltCard>
             </Reveal>
@@ -61,8 +59,7 @@ export function WhyJaagr() {
 
         <Reveal delay={0.08}>
           <p className="hand mx-auto mt-14 max-w-2xl text-center text-2xl text-primary sm:text-3xl">
-            Jaagr combines emotional skill building with school intelligence in
-            one unified system.
+            Jaagr combines emotional skill building with school intelligence in one unified system.
           </p>
         </Reveal>
       </div>

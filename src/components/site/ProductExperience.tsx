@@ -5,12 +5,12 @@ import { Eyebrow, Reveal } from "@/lib/motion-primitives";
 import { cn } from "@/lib/utils";
 import { OrganicDecorations } from "@/components/site/OrganicDecorations";
 
-type TabId = "student" | "teacher" | "school";
+type TabId = "student" | "teacher" | "parent";
 
 const TABS: { id: TabId; label: string }[] = [
   { id: "student", label: "Student" },
   { id: "teacher", label: "Teacher" },
-  { id: "school", label: "School" },
+  { id: "parent", label: "Parent" },
 ];
 
 const COPY: Record<TabId, { title: string; body: string; points: string[] }> = {
@@ -21,20 +21,16 @@ const COPY: Record<TabId, { title: string; body: string; points: string[] }> = {
   },
   teacher: {
     title: "Classroom insight, with a clear next step",
-    body: "Teachers see simple classroom-level wellbeing signals alongside practical, ready-to-use strategies — so noticing something always has a next step.",
-    points: [
-      "Classroom insights",
-      "Guided support",
-      "Practical recommendations",
-    ],
+    body: "Teachers see simple classroom-level wellbeing signals alongside practical, ready-to-use strategies, so noticing something always has a next step.",
+    points: ["Classroom insights", "Guided support", "Practical recommendations"],
   },
-  school: {
-    title: "One view of the whole school's wellbeing",
-    body: "Leadership sees aggregated patterns, participation and programme implementation across grades — enough to act, without exposing individual students.",
+  parent: {
+    title: "Calm insights and shared vocabulary at home",
+    body: "Parents receive gentle, age-appropriate conversation starters and practical guidance to support their teen's emotional growth at home without pressure.",
     points: [
-      "Aggregated insights",
-      "Wellbeing trends",
-      "Implementation & reporting",
+      "Home conversation prompts",
+      "Understanding adolescent stress",
+      "Strengthening family trust",
     ],
   },
 };
@@ -46,9 +42,7 @@ function StudentPanel() {
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
           JAAGR Pulse
         </p>
-        <p className="mt-3 text-sm text-muted-foreground">
-          How are you feeling today?
-        </p>
+        <p className="mt-3 text-sm text-muted-foreground">How are you feeling today?</p>
         <div className="mt-4 flex gap-2">
           {["Low", "Okay", "Good", "Great"].map((m, i) => (
             <span
@@ -75,9 +69,7 @@ function StudentPanel() {
           </span>
           <div>
             <p className="text-sm font-semibold">Box breathing</p>
-            <p className="text-xs text-muted-foreground">
-              60 seconds · focus &amp; calm
-            </p>
+            <p className="text-xs text-muted-foreground">60 seconds · focus &amp; calm</p>
           </div>
         </div>
         <div className="mt-4 h-2 rounded-full bg-secondary">
@@ -97,14 +89,9 @@ function StudentPanel() {
           {["Notice", "Name", "Regulate", "Reflect", "Repeat"].map((s, i) => (
             <div key={s} className="flex flex-1 flex-col items-center gap-2">
               <span
-                className={cn(
-                  "h-2.5 w-full rounded-full",
-                  i < 3 ? "bg-primary" : "bg-secondary",
-                )}
+                className={cn("h-2.5 w-full rounded-full", i < 3 ? "bg-primary" : "bg-secondary")}
               />
-              <span className="text-[0.65rem] font-medium text-muted-foreground">
-                {s}
-              </span>
+              <span className="text-[0.65rem] font-medium text-muted-foreground">{s}</span>
             </div>
           ))}
         </div>
@@ -122,10 +109,7 @@ function TeacherPanel() {
   return (
     <div className="space-y-4">
       {rows.map((r, i) => (
-        <div
-          key={r.label}
-          className="rounded-2xl border border-border bg-background p-5"
-        >
+        <div key={r.label} className="rounded-2xl border border-border bg-background p-5">
           <div className="flex items-center justify-between text-sm">
             <span className="font-medium">{r.label}</span>
             <span className="font-bold text-primary">{r.value}%</span>
@@ -145,59 +129,53 @@ function TeacherPanel() {
         </div>
       ))}
       <div className="rounded-2xl border border-mint/50 bg-mint/15 p-5">
-        <p className="text-sm font-semibold text-mint-foreground">
-          Suggested classroom strategy
-        </p>
+        <p className="text-sm font-semibold text-mint-foreground">Suggested classroom strategy</p>
         <p className="mt-1.5 text-sm text-muted-foreground">
-          Open the period with a two-minute grounding routine before assessments
-          this week.
+          Open the period with a two-minute grounding routine before assessments this week.
         </p>
       </div>
     </div>
   );
 }
 
-function SchoolPanel() {
-  const bars = [42, 58, 51, 66, 74, 69, 81];
+function ParentPanel() {
+  const prompts = [
+    {
+      label: "Dinner table connection",
+      text: "What was one moment that brought you calm or a laugh today?",
+    },
+    {
+      label: "Pre-exam empathy",
+      text: "How to listen without immediately giving advice or pressure.",
+    },
+    {
+      label: "Recognising quiet fatigue",
+      text: "Spotting the difference between tiredness and emotional overwhelm.",
+    },
+  ];
+
   return (
     <div className="space-y-4">
       <div className="rounded-2xl border border-border bg-background p-5">
-        <div className="flex items-center justify-between">
-          <p className="text-sm font-semibold">School wellbeing trend</p>
-          <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-mint-foreground">
-            <TrendingUp className="h-3.5 w-3.5" aria-hidden /> Improving
-          </span>
-        </div>
-        <div className="mt-5 flex h-32 items-end gap-2">
-          {bars.map((b, i) => (
-            <motion.span
-              key={i}
-              initial={{ height: 0 }}
-              animate={{ height: `${b}%` }}
-              transition={{
-                duration: 0.7,
-                delay: i * 0.05,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="flex-1 rounded-t-lg bg-primary/70"
-            />
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+          JAAGR At Home
+        </p>
+        <p className="mt-2 text-sm font-semibold">Weekly Parent-Teen Conversation Sparks</p>
+        <div className="mt-4 space-y-2.5">
+          {prompts.map((p) => (
+            <div key={p.label} className="rounded-xl border border-border/80 bg-secondary/40 p-3.5">
+              <p className="text-xs font-bold text-primary">{p.label}</p>
+              <p className="mt-1 text-xs text-muted-foreground">{p.text}</p>
+            </div>
           ))}
         </div>
       </div>
-      <div className="grid gap-4 sm:grid-cols-3">
-        {[
-          { k: "Grades active", v: "6-12" },
-          { k: "Participation", v: "88%" },
-          { k: "Reports ready", v: "Termly" },
-        ].map((s) => (
-          <div
-            key={s.k}
-            className="rounded-2xl border border-border bg-background p-5"
-          >
-            <p className="text-xl font-extrabold text-primary">{s.v}</p>
-            <p className="mt-1 text-xs text-muted-foreground">{s.k}</p>
-          </div>
-        ))}
+      <div className="rounded-2xl border border-mint/50 bg-mint/15 p-5">
+        <p className="text-sm font-semibold text-mint-foreground">Parent-Teen Trust Guarantee</p>
+        <p className="mt-1.5 text-sm text-muted-foreground">
+          No invasive test scores or surveillance. JAAGR builds shared emotional vocabulary so teens
+          open up naturally on their own terms.
+        </p>
       </div>
     </div>
   );
@@ -207,10 +185,7 @@ export function ProductExperience() {
   const [tab, setTab] = useState<TabId>("student");
 
   return (
-    <section
-      id="for-students"
-      className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32"
-    >
+    <section id="for-students" className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32">
       <OrganicDecorations />
       <div className="shell relative z-10">
         <div className="max-w-3xl">
@@ -266,9 +241,7 @@ export function ProductExperience() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h3 className="text-2xl font-bold leading-snug">
-                {COPY[tab].title}
-              </h3>
+              <h3 className="text-2xl font-bold leading-snug">{COPY[tab].title}</h3>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 {COPY[tab].body}
               </p>
@@ -283,16 +256,11 @@ export function ProductExperience() {
                 ))}
               </ul>
               <p className="mt-8 flex items-start gap-3 rounded-2xl border border-border bg-card p-4 text-sm text-muted-foreground">
-                <Lock
-                  className="mt-0.5 h-4 w-4 shrink-0 text-primary"
-                  aria-hidden
-                />
+                <Lock className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
                 <span>
-                  <strong className="text-foreground">
-                    Student-first privacy.
-                  </strong>{" "}
-                  Schools see meaningful aggregated patterns and programme-level
-                  insights — never invasive individual mental-health logs.
+                  <strong className="text-foreground">Student-first privacy.</strong> Schools see
+                  meaningful aggregated patterns and programme-level insights, never invasive
+                  individual mental-health logs.
                 </span>
               </p>
             </motion.div>
@@ -313,7 +281,7 @@ export function ProductExperience() {
               >
                 {tab === "student" && <StudentPanel />}
                 {tab === "teacher" && <TeacherPanel />}
-                {tab === "school" && <SchoolPanel />}
+                {tab === "parent" && <ParentPanel />}
               </motion.div>
             </AnimatePresence>
           </div>

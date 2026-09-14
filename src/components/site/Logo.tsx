@@ -1,20 +1,11 @@
 import darkLogo from "@/assets/DarkColorLogo.svg";
 import lightLogo from "@/assets/LightColorLogo.svg";
 
-export function Logo({
-  tone,
-  className = "",
-}: {
-  tone?: "dark" | "light";
-  className?: string;
-}) {
+export function Logo({ tone, className = "" }: { tone?: "dark" | "light"; className?: string }) {
   // If tone is explicitly "light" (e.g. in the dark Footer), always render the white/light logo
   if (tone === "light") {
     return (
-      <span
-        className={`inline-flex items-center ${className}`}
-        aria-label="JAAGR MIND"
-      >
+      <span className={`inline-flex items-center ${className}`} aria-label="JAAGR MIND">
         <img
           src={lightLogo}
           alt="JAAGR MIND"
@@ -26,10 +17,7 @@ export function Logo({
 
   // Default: adapts automatically to light / dark mode
   return (
-    <span
-      className={`relative inline-flex items-center ${className}`}
-      aria-label="JAAGR MIND"
-    >
+    <span className={`relative inline-flex items-center ${className}`} aria-label="JAAGR MIND">
       {/* Light mode: dark colored logo */}
       <img
         src={darkLogo}

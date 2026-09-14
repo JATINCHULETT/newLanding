@@ -62,10 +62,7 @@ export function TiltCard({
       ref={ref}
       onPointerMove={handleMove}
       onPointerLeave={reset}
-      className={cn(
-        "transition-transform duration-500 ease-out will-change-transform",
-        className,
-      )}
+      className={cn("transition-transform duration-500 ease-out will-change-transform", className)}
     >
       {children}
     </div>
@@ -131,12 +128,7 @@ export function Eyebrow({
         tone === "primary" ? "text-primary" : "text-mint",
       )}
     >
-      <span
-        className={cn(
-          "h-px w-8",
-          tone === "primary" ? "bg-primary/50" : "bg-mint/60",
-        )}
-      />
+      <span className={cn("h-px w-8", tone === "primary" ? "bg-primary/50" : "bg-mint/60")} />
       {children}
     </span>
   );

@@ -5,10 +5,13 @@ import {
   CalendarCheck,
   CheckCircle2,
   Clock,
+  Phone,
+  Sparkles,
   Users,
 } from "lucide-react";
 import { Reveal, Eyebrow } from "@/lib/motion-primitives";
-import { OrganicDecorations } from "@/components/site/OrganicDecorations";
+import { JaagrThreeLines, OrganicDecorations } from "@/components/site/OrganicDecorations";
+import emotionsMadeEasyImg from "@/assets/emotions-made-easy.png";
 
 const PROMISES = [
   {
@@ -35,10 +38,7 @@ export function DemoForm() {
   const [sent, setSent] = useState(false);
 
   return (
-    <section
-      id="book-demo"
-      className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32"
-    >
+    <section id="book-demo" className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32">
       <OrganicDecorations />
       <div className="shell relative z-10">
         <div className="ink-panel relative overflow-hidden rounded-4xl px-6 py-14 sm:px-10 lg:px-14 lg:py-20">
@@ -59,16 +59,13 @@ export function DemoForm() {
               <Reveal delay={0.06}>
                 <h2 className="mt-5 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-[2.7rem]">
                   Let&apos;s build emotional strength
-                  <span className="block text-mint">
-                    into your school year.
-                  </span>
+                  <span className="block text-mint">into your school year.</span>
                 </h2>
               </Reveal>
               <Reveal delay={0.12}>
                 <p className="mt-5 max-w-md text-base leading-relaxed opacity-80">
-                  Tell us a little about your school. We&apos;ll show you
-                  exactly how JAAGR Mind would work in your classrooms, with
-                  your teachers, from day one.
+                  Tell us a little about your school. We&apos;ll show you exactly how JAAGR Mind
+                  would work in your classrooms, with your teachers, from day one.
                 </p>
               </Reveal>
 
@@ -87,6 +84,25 @@ export function DemoForm() {
                   </Reveal>
                 ))}
               </ul>
+
+              <Reveal delay={0.35}>
+                <div className="mt-8 relative overflow-hidden rounded-2xl border border-white/20 bg-black/40 shadow-xl max-w-sm">
+                  <img
+                    src={emotionsMadeEasyImg}
+                    alt="Emotions Made Easy - JAAGR Mind"
+                    className="w-full h-44 object-cover"
+                  />
+                  <div className="p-3 bg-black/75 backdrop-blur-md text-xs flex items-center justify-between text-white border-t border-white/10">
+                    <span className="font-medium text-white/80">Direct Advisor Line:</span>
+                    <a
+                      href="tel:+917820001282"
+                      className="text-mint font-bold hover:underline flex items-center gap-1"
+                    >
+                      <Phone className="h-3 w-3" /> +91 78200 01282
+                    </a>
+                  </div>
+                </div>
+              </Reveal>
             </div>
 
             <Reveal delay={0.1}>
@@ -118,8 +134,8 @@ export function DemoForm() {
                         Request received
                       </h3>
                       <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-                        Our school partnerships team will reach out within one
-                        working day to schedule your demo.
+                        Our school partnerships team will reach out within one working day to
+                        schedule your demo.
                       </p>
                       <button
                         type="button"
@@ -228,8 +244,8 @@ export function DemoForm() {
                               Select
                             </option>
                             <option>Under 500</option>
-                            <option>500 – 1,500</option>
-                            <option>1,500 – 3,000</option>
+                            <option>500 to 1,500</option>
+                            <option>1,500 to 3,000</option>
                             <option>3,000+</option>
                           </select>
                         </div>
@@ -257,16 +273,21 @@ export function DemoForm() {
                             htmlFor="phone"
                             className="mb-1.5 block text-xs font-semibold text-secondary-foreground"
                           >
-                            Phone
+                            Phone number *
                           </label>
-                          <input
-                            id="phone"
-                            name="phone"
-                            type="tel"
-                            required
-                            placeholder="+91"
-                            className={FIELD}
-                          />
+                          <div className="flex rounded-2xl border border-border bg-card overflow-hidden focus-within:border-primary/50 focus-within:ring-4 focus-within:ring-primary/12">
+                            <span className="inline-flex items-center gap-1 px-3 bg-secondary text-xs font-semibold border-r border-border text-foreground select-none">
+                              🇮🇳 +91
+                            </span>
+                            <input
+                              id="phone"
+                              name="phone"
+                              type="tel"
+                              required
+                              placeholder="78200 01282"
+                              className="w-full bg-transparent px-3 py-3.5 text-sm text-foreground outline-none placeholder:text-muted-foreground/60"
+                            />
+                          </div>
                         </div>
                       </div>
 
@@ -281,20 +302,21 @@ export function DemoForm() {
                           id="message"
                           name="message"
                           rows={3}
-                          placeholder="Tell us briefly"
+                          placeholder="e.g. Exam anxiety, student emotional fitness, teacher training"
                           className={FIELD}
                         />
                       </div>
 
                       <button
                         type="submit"
-                        className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-6 py-4 text-base font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-0.5"
+                        className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-6 py-4 text-sm font-bold tracking-wider uppercase text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
                       >
-                        Book a School Demo
+                        Request a Call / Book Demo
                         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </button>
-                      <p className="text-center text-xs text-muted-foreground">
-                        We only use your details to schedule the demo.
+                      <p className="text-center text-[0.7rem] text-muted-foreground leading-relaxed pt-1">
+                        By submitting this form, you agree to our Terms of Service &amp; Privacy
+                        Policy and to be contacted by us via Call/Email/WhatsApp/SMS.
                       </p>
                     </motion.form>
                   )}

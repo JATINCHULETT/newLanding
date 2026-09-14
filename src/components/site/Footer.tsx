@@ -5,17 +5,17 @@ const COLUMNS = [
   {
     title: "Explore",
     links: [
-      { label: "Why Jaagr", href: "#why-jaagr" },
-      { label: "How It Works", href: "#how-it-works" },
-      { label: "About Us", href: "#about-us" },
+      { label: "Why Jaagr", href: "/#why-jaagr" },
+      { label: "How It Works", href: "/#how-it-works" },
+      { label: "About Us", href: "/#about-us" },
     ],
   },
   {
     title: "For",
     links: [
-      { label: "Schools", href: "#for-schools" },
-      { label: "Teachers", href: "#for-teachers" },
-      { label: "Students", href: "#for-students" },
+      { label: "Students", href: "/students" },
+      { label: "Teachers", href: "/teachers" },
+      { label: "Parents", href: "/parents" },
     ],
   },
 ];
@@ -32,13 +32,10 @@ export function Footer() {
           <div>
             <Logo tone="light" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed opacity-75">
-              A school-wide emotional fitness system that helps Indian schools
-              notice earlier, respond with confidence and build strength before
-              problems become crises.
+              A school-wide emotional fitness system that helps Indian schools notice earlier,
+              respond with confidence and build strength before problems become crises.
             </p>
-            <p className="hand mt-5 text-xl text-mint">
-              Notice early. Strengthen daily.
-            </p>
+            <p className="hand mt-5 text-xl text-mint">Notice early. Strengthen daily.</p>
           </div>
 
           {COLUMNS.map((col) => (
@@ -68,16 +65,15 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm opacity-80">
               <li className="flex items-center gap-2.5">
                 <Mail className="h-4 w-4 text-mint" aria-hidden />
-                <a
-                  href="mailto:hello@jaagrmind.com"
-                  className="hover:opacity-100"
-                >
+                <a href="mailto:hello@jaagrmind.com" className="hover:opacity-100">
                   hello@jaagrmind.com
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="h-4 w-4 text-mint" aria-hidden />
-                <span>Add your school helpline</span>
+                <a href="tel:+917820001282" className="hover:opacity-100 font-semibold text-mint">
+                  +91 78200 01282
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <MapPin className="h-4 w-4 text-mint" aria-hidden />
@@ -85,7 +81,7 @@ export function Footer() {
               </li>
             </ul>
             <a
-              href="#book-demo"
+              href="/#book-demo"
               className="mt-6 inline-flex rounded-full bg-mint px-5 py-3 text-sm font-semibold text-mint-foreground transition-transform duration-300 hover:-translate-y-0.5"
             >
               Book a School Demo
@@ -95,10 +91,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-border pt-6 text-xs opacity-65 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} JAAGR Mind. All rights reserved.</p>
-          <p>
-            Not a therapy or clinical service. Preventive, skills-based school
-            programme.
-          </p>
+          <p>Not a therapy or clinical service. Preventive, skills-based school programme.</p>
         </div>
       </div>
     </footer>

@@ -1,22 +1,9 @@
 import { useRef } from "react";
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "motion/react";
-import {
-  ArrowDown,
-  ArrowRight,
-  BadgeCheck,
-  Lock,
-  MapPin,
-  ShieldCheck,
-} from "lucide-react";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
+import { ArrowDown, ArrowRight, BadgeCheck, Lock, MapPin, ShieldCheck } from "lucide-react";
 import heroImg from "@/assets/hero-ecosystem.png";
 import floatImg from "@/assets/float-objects.png";
-import { OrganicDecorations } from "@/components/site/OrganicDecorations";
+import { JaagrThreeLines, OrganicDecorations } from "@/components/site/OrganicDecorations";
 
 const TRUST = [
   { icon: BadgeCheck, label: "Evidence-informed" },
@@ -72,14 +59,17 @@ export function Hero() {
 
       <div className="shell grid items-center gap-14 lg:grid-cols-[1.02fr_1fr] lg:gap-10">
         <div>
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="hand text-2xl text-primary"
+            className="flex items-center gap-3"
           >
-            The best schools don&apos;t wait for a crisis.
-          </motion.p>
+            <p className="hand text-xl sm:text-2xl text-primary">
+              The best schools don&apos;t wait for a crisis.
+            </p>
+            <JaagrThreeLines className="h-5 w-6 text-primary/80 dark:text-mint hidden sm:inline-block" />
+          </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 22 }}
@@ -89,7 +79,7 @@ export function Hero() {
               delay: 0.08,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="mt-4 text-[2.35rem] font-extrabold leading-[1.05] sm:text-5xl lg:text-[3.6rem]"
+            className="mt-4 text-2xl font-extrabold leading-[1.18] sm:text-4xl sm:leading-[1.1] lg:text-[3.6rem] lg:leading-[1.05]"
           >
             Every child shows signs.
             <span className="mt-2 block text-gradient">
@@ -101,18 +91,17 @@ export function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+            className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base lg:text-lg"
           >
-            Help your school identify students who need support earlier, equip
-            every teacher to respond with confidence, and build emotional
-            strength into everyday school life.
+            Help your school identify students who need support earlier, equip every teacher to
+            respond with confidence, and build emotional strength into everyday school life.
           </motion.p>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-4 inline-flex rounded-full border border-border bg-card/70 px-4 py-2 text-sm font-medium text-secondary-foreground"
+            className="mt-4 inline-flex rounded-full border border-border bg-card/70 px-3.5 py-1.5 text-xs font-medium text-secondary-foreground sm:px-4 sm:py-2 sm:text-sm"
           >
             Not therapy. Not lectures. Trainable life skills.
           </motion.p>
@@ -121,18 +110,18 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.36 }}
-            className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
+            className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
             <a
               href="#book-demo"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-0.5"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-0.5 sm:px-7 sm:py-4 sm:text-base"
             >
               Book a School Demo
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a
               href="#why-jaagr"
-              className="group inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-7 py-4 text-base font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 sm:px-7 sm:py-4 sm:text-base"
             >
               See How Jaagr Works
               <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-1" />
@@ -146,10 +135,7 @@ export function Hero() {
             className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-border/70 pt-6"
           >
             {TRUST.map(({ icon: Icon, label }) => (
-              <li
-                key={label}
-                className="flex items-center gap-2 text-sm text-muted-foreground"
-              >
+              <li key={label} className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Icon className="h-4 w-4 text-primary" aria-hidden />
                 {label}
               </li>

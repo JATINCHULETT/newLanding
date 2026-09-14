@@ -7,7 +7,7 @@ const STEPS = [
   {
     letter: "J",
     name: "Joint",
-    body: "The whole school moves together — leadership, teachers and students aligned around one emotional culture.",
+    body: "The whole school moves together: leadership, teachers and students aligned around one emotional culture.",
   },
   {
     letter: "A",
@@ -17,7 +17,7 @@ const STEPS = [
   {
     letter: "A",
     name: "Activation",
-    body: "Students practise simple, practical regulation tools — usable skills, not theory.",
+    body: "Students practise simple, practical regulation tools: usable skills, not theory.",
   },
   {
     letter: "G",
@@ -31,13 +31,7 @@ const STEPS = [
   },
 ];
 
-function Step({
-  step,
-  index,
-}: {
-  step: (typeof STEPS)[number];
-  index: number;
-}) {
+function Step({ step, index }: { step: (typeof STEPS)[number]; index: number }) {
   const ref = useRef<HTMLLIElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -47,11 +41,7 @@ function Step({
   const x = useTransform(scrollYProgress, [0, 1], [24, 0]);
 
   return (
-    <motion.li
-      ref={ref}
-      style={{ opacity, x }}
-      className="relative pl-16 sm:pl-24"
-    >
+    <motion.li ref={ref} style={{ opacity, x }} className="relative pl-16 sm:pl-24">
       <span className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/12 font-display text-xl font-extrabold text-primary sm:h-16 sm:w-16 sm:text-3xl">
         {step.letter}
       </span>
@@ -89,15 +79,12 @@ export function JAAGRFramework() {
           <Reveal delay={0.06}>
             <h2 className="mt-5 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-[2.9rem]">
               Emotional strength is built.
-              <span className="block text-gradient">
-                Not just talked about.
-              </span>
+              <span className="block text-gradient">Not just talked about.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-5 text-lg text-muted-foreground">
-              Think of J.A.A.G.R as installing an emotional fitness system
-              inside your school.
+              Think of J.A.A.G.R as installing an emotional fitness system inside your school.
             </p>
           </Reveal>
         </div>

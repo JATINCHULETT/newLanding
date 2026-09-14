@@ -120,28 +120,14 @@
 
   /* Elevation + surface language */
   --shadow-soft:
-    0 1px 2px oklch(0.32 0.09 288 / 0.04),
-    0 12px 32px -12px oklch(0.32 0.09 288 / 0.14);
+    0 1px 2px oklch(0.32 0.09 288 / 0.04), 0 12px 32px -12px oklch(0.32 0.09 288 / 0.14);
   --shadow-lift:
-    0 2px 4px oklch(0.32 0.09 288 / 0.05),
-    0 28px 60px -24px oklch(0.32 0.09 288 / 0.24);
+    0 2px 4px oklch(0.32 0.09 288 / 0.05), 0 28px 60px -24px oklch(0.32 0.09 288 / 0.24);
   --shadow-glow: 0 18px 40px -16px oklch(0.52 0.196 293 / 0.5);
   --gradient-veil:
-    radial-gradient(
-      68% 62% at 12% 8%,
-      oklch(0.9 0.05 300 / 0.6) 0%,
-      transparent 60%
-    ),
-    radial-gradient(
-      52% 48% at 92% 4%,
-      oklch(0.86 0.07 172 / 0.34) 0%,
-      transparent 62%
-    );
-  --gradient-ink: linear-gradient(
-    180deg,
-    oklch(0.245 0.072 283) 0%,
-    oklch(0.21 0.075 288) 100%
-  );
+    radial-gradient(68% 62% at 12% 8%, oklch(0.9 0.05 300 / 0.6) 0%, transparent 60%),
+    radial-gradient(52% 48% at 92% 4%, oklch(0.86 0.07 172 / 0.34) 0%, transparent 62%);
+  --gradient-ink: linear-gradient(180deg, oklch(0.245 0.072 283) 0%, oklch(0.21 0.075 288) 100%);
 }
 
 .dark {
@@ -253,10 +239,7 @@
 }
 
 @utility dotgrid {
-  background-image: radial-gradient(
-    var(--color-lilac) 1.2px,
-    transparent 1.2px
-  );
+  background-image: radial-gradient(var(--color-lilac) 1.2px, transparent 1.2px);
   background-size: 14px 14px;
 }
 
