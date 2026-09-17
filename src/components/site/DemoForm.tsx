@@ -5,10 +5,12 @@ import {
   CalendarCheck,
   CheckCircle2,
   Clock,
+  Loader2,
   Phone,
   Sparkles,
   Users,
 } from "lucide-react";
+import { submitCallRequest } from "@/lib/call-request";
 import { Reveal, Eyebrow } from "@/lib/motion-primitives";
 import { JaagrThreeLines, OrganicDecorations } from "@/components/site/OrganicDecorations";
 import emotionsMadeEasyImg from "@/assets/emotions-made-easy.png";
@@ -36,6 +38,38 @@ const FIELD =
 
 export function DemoForm() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    const fd = new FormData(e.currentTarget);
+    const email = (fd.get("email") as string) || "";
+    setSubmittedEmail(email);
+
+    try {
+      await submitCallRequest({
+        data: {
+          name: (fd.get("name") as string) || "",
+          role: (fd.get("role") as string) || "",
+          school: (fd.get("school") as string) || "",
+          city: (fd.get("city") as string) || "",
+          strength: (fd.get("strength") as string) || "",
+          email: email,
+          phone: (fd.get("phone") as string) || "",
+          message: (fd.get("message") as string) || undefined,
+          source: "demo_form",
+        },
+      });
+      setSent(true);
+    } catch (err) {
+      console.error("Failed to submit demo request:", err);
+      setSent(true);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section id="book-demo" className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32">
@@ -137,6 +171,11 @@ export function DemoForm() {
                         Our school partnerships team will reach out within one working day to
                         schedule your demo.
                       </p>
+                      {submittedEmail && (
+                        <p className="mt-2 text-xs font-semibold text-mint">
+                          ✓ A confirmation email has been sent to {submittedEmail}.
+                        </p>
+                      )}
                       <button
                         type="button"
                         onClick={() => setSent(false)}
@@ -151,10 +190,7 @@ export function DemoForm() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      onSubmit={(e) => {
-                        e.preventDefault();
-                        setSent(true);
-                      }}
+                      onSubmit={handleSubmit}
                       className="space-y-4"
                     >
                       <h3 className="text-xl font-extrabold text-foreground">
@@ -309,10 +345,19 @@ export function DemoForm() {
 
                       <button
                         type="submit"
-                        className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-6 py-4 text-sm font-bold tracking-wider uppercase text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+                        disabled={loading}
+                        className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-6 py-4 text-sm font-bold tracking-wider uppercase text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-0.5 cursor-pointer disabled:opacity-60"
                       >
-                        Request a Call / Book Demo
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        {loading ? (
+                          <>
+                            <Loader2 className="h-4 w-4 animate-spin" /> Submitting Request...
+                          </>
+                        ) : (
+                          <>
+                            Request a Call / Book Demo
+                            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                          </>
+                        )}
                       </button>
                       <p className="text-center text-[0.7rem] text-muted-foreground leading-relaxed pt-1">
                         By submitting this form, you agree to our Terms of Service &amp; Privacy

@@ -59,8 +59,12 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --font-display: "Gotham Rounded", "GothamRounded", "Quicksand", "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-sans: "Museo Sans", "MuseoSans", "Plus Jakarta Sans", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display:
+    "Gotham Rounded", "GothamRounded", "Quicksand", "Nunito", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  --font-sans:
+    "Museo Sans", "MuseoSans", "Plus Jakarta Sans", "Open Sans", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
   --font-hand: "Segoe Print", "SegoePrint", "Caveat", "Chalkboard SE", "Comic Sans MS", cursive;
 }
 
@@ -71,22 +75,26 @@
  * 3. Body: Museo Sans (100, 300, 500, 700, 900) - Clean, readable, neutral body copy
  */
 @font-face {
-  font-family: 'Gotham Rounded';
-  src: local('Gotham Rounded'), local('GothamRounded'), local('Gotham Rounded Book'), local('Gotham Rounded Medium'), local('Gotham Rounded Bold');
+  font-family: "Gotham Rounded";
+  src:
+    local("Gotham Rounded"), local("GothamRounded"), local("Gotham Rounded Book"),
+    local("Gotham Rounded Medium"), local("Gotham Rounded Bold");
   font-weight: 300 800;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Museo Sans';
-  src: local('Museo Sans'), local('MuseoSans'), local('MuseoSans-500'), local('MuseoSans-700'), local('Museo Sans 500'), local('Museo Sans 700'), local('MuseoSans-300'), local('MuseoSans-100');
+  font-family: "Museo Sans";
+  src:
+    local("Museo Sans"), local("MuseoSans"), local("MuseoSans-500"), local("MuseoSans-700"),
+    local("Museo Sans 500"), local("Museo Sans 700"), local("MuseoSans-300"), local("MuseoSans-100");
   font-weight: 100 900;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Segoe Print';
-  src: local('Segoe Print'), local('SegoePrint'), local('Segoe Print Bold');
+  font-family: "Segoe Print";
+  src: local("Segoe Print"), local("SegoePrint"), local("Segoe Print Bold");
   font-weight: 400 700;
   font-display: swap;
 }

@@ -1,11 +1,5 @@
 import React, { useRef } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  MotionValue,
-} from "motion/react";
+import { motion, useScroll, useTransform, useSpring, MotionValue } from "motion/react";
 
 export interface ParallaxProduct {
   title: string;
@@ -37,30 +31,15 @@ export const HeroParallax = ({
 
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
-  const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 900]),
-    springConfig
-  );
+  const translateX = useSpring(useTransform(scrollYProgress, [0, 1], [0, 900]), springConfig);
   const translateXReverse = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, -900]),
-    springConfig
+    springConfig,
   );
-  const rotateX = useSpring(
-    useTransform(scrollYProgress, [0, 0.25], [15, 0]),
-    springConfig
-  );
-  const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
-    springConfig
-  );
-  const rotateZ = useSpring(
-    useTransform(scrollYProgress, [0, 0.25], [16, 0]),
-    springConfig
-  );
-  const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.25], [-550, 250]),
-    springConfig
-  );
+  const rotateX = useSpring(useTransform(scrollYProgress, [0, 0.25], [15, 0]), springConfig);
+  const opacity = useSpring(useTransform(scrollYProgress, [0, 0.2], [0.2, 1]), springConfig);
+  const rotateZ = useSpring(useTransform(scrollYProgress, [0, 0.25], [16, 0]), springConfig);
+  const translateY = useSpring(useTransform(scrollYProgress, [0, 0.25], [-550, 250]), springConfig);
 
   return (
     <div
@@ -79,29 +58,17 @@ export const HeroParallax = ({
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-8 sm:space-x-12 mb-12 sm:mb-16">
           {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
+            <ProductCard product={product} translate={translateX} key={product.title} />
           ))}
         </motion.div>
         <motion.div className="flex flex-row mb-12 sm:mb-16 space-x-8 sm:space-x-12">
           {secondRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.title}
-            />
+            <ProductCard product={product} translate={translateXReverse} key={product.title} />
           ))}
         </motion.div>
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-8 sm:space-x-12">
           {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
+            <ProductCard product={product} translate={translateX} key={product.title} />
           ))}
         </motion.div>
       </motion.div>
@@ -116,8 +83,8 @@ export const DefaultHeader = () => {
         The Complete School <br /> Wellbeing Ecosystem
       </h2>
       <p className="max-w-2xl text-base md:text-xl mt-6 text-muted-foreground leading-relaxed">
-        Explore the practical touchpoints that weave quiet emotional self-awareness
-        into every corner of the school day.
+        Explore the practical touchpoints that weave quiet emotional self-awareness into every
+        corner of the school day.
       </p>
     </div>
   );
@@ -143,10 +110,7 @@ export const ProductCard = ({
       key={product.title}
       className="group/product h-80 w-[24rem] sm:h-96 sm:w-[28rem] lg:w-[32rem] relative shrink-0 rounded-3xl overflow-hidden border border-border/80 bg-card shadow-lg hover:shadow-2xl transition-all"
     >
-      <a
-        href={product.link}
-        className="block h-full w-full relative"
-      >
+      <a href={product.link} className="block h-full w-full relative">
         <img
           src={product.thumbnail}
           height="600"

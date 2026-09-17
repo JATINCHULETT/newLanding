@@ -75,9 +75,7 @@ export function AnimatedModalDemo() {
               </div>
               <div className="flex items-center justify-center">
                 <ElevatorIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-                  12 hotels
-                </span>
+                <span className="text-neutral-700 dark:text-neutral-300 text-sm">12 hotels</span>
               </div>
               <div className="flex items-center justify-center">
                 <VacationIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
@@ -93,15 +91,11 @@ export function AnimatedModalDemo() {
               </div>
               <div className="flex items-center justify-center">
                 <MicIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-                  Open Mic
-                </span>
+                <span className="text-neutral-700 dark:text-neutral-300 text-sm">Open Mic</span>
               </div>
               <div className="flex items-center justify-center">
                 <ParachuteIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-                  Paragliding
-                </span>
+                <span className="text-neutral-700 dark:text-neutral-300 text-sm">Paragliding</span>
               </div>
             </div>
           </ModalContent>

@@ -16,7 +16,8 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
   // Row 1: Student & Classroom Moments
   {
     title: "Jaagr Pulse",
-    subtitle: "A safe, 60-second morning mood check-in building emotional literacy without judgment.",
+    subtitle:
+      "A safe, 60-second morning mood check-in building emotional literacy without judgment.",
     category: "Student Routine",
     badge: "60 Seconds",
     link: "/students",
@@ -41,7 +42,8 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
   },
   {
     title: "Exam Resilience Journey",
-    subtitle: "Term-long mental conditioning to convert exam fear into steady, focused preparation.",
+    subtitle:
+      "Term-long mental conditioning to convert exam fear into steady, focused preparation.",
     category: "Personal Track",
     badge: "Resilience",
     link: "/students",
@@ -59,7 +61,8 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
   // Row 2: Teacher & Family Interventions
   {
     title: "2-Minute Teacher Playbooks",
-    subtitle: "Concrete classroom strategies giving teachers confidence to de-escalate stress quickly.",
+    subtitle:
+      "Concrete classroom strategies giving teachers confidence to de-escalate stress quickly.",
     category: "Educator Toolkit",
     badge: "Practical",
     link: "/teachers",
@@ -68,7 +71,8 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
   },
   {
     title: "Counselor Escalation Hub",
-    subtitle: "Discreet early-signal pathways so students receive professional care before crises arise.",
+    subtitle:
+      "Discreet early-signal pathways so students receive professional care before crises arise.",
     category: "Early Support",
     badge: "Confidential",
     link: "/#book-demo",
@@ -86,7 +90,8 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
   },
   {
     title: "Progressive Muscle Release",
-    subtitle: "Isometric micro-exercises designed to relieve physical neck, shoulder, and back tension.",
+    subtitle:
+      "Isometric micro-exercises designed to relieve physical neck, shoulder, and back tension.",
     category: "Somatic Reset",
     badge: "Bite-Sized",
     link: "/students",
@@ -95,7 +100,8 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
   },
   {
     title: "The Emotional Vocabulary Wheel",
-    subtitle: "Empowering Indian adolescents to articulate nuanced feelings beyond simple frustration.",
+    subtitle:
+      "Empowering Indian adolescents to articulate nuanced feelings beyond simple frustration.",
     category: "Curriculum",
     badge: "Vocabulary",
     link: "/#how-it-works",
@@ -113,7 +119,8 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
   },
   {
     title: "Deep Study & Focus Tracks",
-    subtitle: "Evidence-based attention training to help teens disconnect from digital distraction.",
+    subtitle:
+      "Evidence-based attention training to help teens disconnect from digital distraction.",
     category: "Academic Fitness",
     badge: "Focus",
     link: "/students",
@@ -131,7 +138,8 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
   },
   {
     title: "Staff Room Wellbeing Culture",
-    subtitle: "Supportive faculty culture sessions ensuring teacher burnout is prevented proactively.",
+    subtitle:
+      "Supportive faculty culture sessions ensuring teacher burnout is prevented proactively.",
     category: "Teacher Care",
     badge: "Community",
     link: "/teachers",
@@ -140,7 +148,8 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
   },
   {
     title: "Annual School Growth Review",
-    subtitle: "Annual longitudinal wellbeing trends providing clear metrics to principals and trustees.",
+    subtitle:
+      "Annual longitudinal wellbeing trends providing clear metrics to principals and trustees.",
     category: "Analytics",
     badge: "Strategic",
     link: "/#book-demo",
@@ -169,8 +178,9 @@ export function HeroParallaxShowcase() {
 
       <Reveal delay={0.12}>
         <p className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed">
-          Scroll through the real surfaces of Jaagr Mind: from autonomous 60-second morning check-ins
-          and teacher de-escalation playbooks to parent dinner connection cards and CBSE-compliant audit reports.
+          Scroll through the real surfaces of Jaagr Mind: from autonomous 60-second morning
+          check-ins and teacher de-escalation playbooks to parent dinner connection cards and
+          CBSE-compliant audit reports.
         </p>
       </Reveal>
 
@@ -419,8 +429,12 @@ function MobileEcosystemShowcase({ products }: { products: ParallaxProduct[] }) 
       {/* Navigation & Swipe Helper Bar */}
       <div className="mt-3 flex items-center justify-between max-w-xl mx-auto px-1">
         <p className="text-[11px] font-medium text-muted-foreground flex items-center gap-1">
-          <span>Card {currentIndex + 1} of {filtered.length}</span>
-          <span className="hidden sm:inline text-muted-foreground/60">• Swipe sideways to explore</span>
+          <span>
+            Card {currentIndex + 1} of {filtered.length}
+          </span>
+          <span className="hidden sm:inline text-muted-foreground/60">
+            • Swipe sideways to explore
+          </span>
         </p>
 
         <div className="flex items-center gap-1.5">

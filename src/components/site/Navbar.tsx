@@ -40,7 +40,7 @@ export function Navbar() {
         aria-label="Primary"
         className={cn(
           "pointer-events-auto mx-auto flex max-w-7xl items-center justify-between rounded-full border border-border/70 bg-card/90 px-4 py-2 sm:px-6 sm:py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-xl transition-all duration-300",
-          scrolled && "border-border/90 bg-card/95 shadow-[var(--shadow-lift)]"
+          scrolled && "border-border/90 bg-card/95 shadow-[var(--shadow-lift)]",
         )}
       >
         <Logo />
@@ -62,9 +62,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={toggleTheme}
-            aria-label={
-              theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
-            }
+            aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
             className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/80 bg-card/80 text-foreground transition-all duration-300 hover:border-primary/50 hover:bg-secondary active:scale-95 shadow-sm sm:h-9 sm:w-9 cursor-pointer"
           >
             {theme === "dark" ? (

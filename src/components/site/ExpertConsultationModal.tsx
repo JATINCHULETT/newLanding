@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, ArrowUpRight, CheckCircle2, Loader2, Phone, ShieldCheck } from "lucide-react";
 import { Modal, ModalBody, ModalContent, ModalFooter } from "@/components/ui/animated-modal";
+import { submitCallRequest } from "@/lib/call-request";
 
 export function openExpertModal() {
   if (typeof window !== "undefined") {
@@ -41,6 +42,7 @@ export function ExpertConsultationModal() {
   const { isOpen, setIsOpen, close } = useExpertModal();
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -54,17 +56,32 @@ export function ExpertConsultationModal() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    setErrorMessage(null);
+
+    try {
+      await submitCallRequest({
+        data: {
+          ...formData,
+          source: "modal_callback",
+        },
+      });
       setSubmitted(true);
-    }, 600);
+    } catch (err: unknown) {
+      console.error("Failed to submit call request:", err);
+      setErrorMessage(
+        "Could not submit request. Please try again or call us directly at +91 78200 01282.",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setErrorMessage(null);
     setFormData({
       name: "",
       email: "",
@@ -122,6 +139,11 @@ export function ExpertConsultationModal() {
                 {formData.preferredTime ? `(${formData.preferredTime})` : "shortly"}
                 {formData.school ? ` for ${formData.school}` : ""}.
               </p>
+              {formData.email && (
+                <p className="mt-2 text-xs text-mint font-medium">
+                  ✓ A confirmation email has been sent to {formData.email}.
+                </p>
+              )}
 
               <div className="mt-5 inline-flex flex-col sm:flex-row items-center gap-3">
                 <a
@@ -291,6 +313,12 @@ export function ExpertConsultationModal() {
                     className="mt-1 w-full rounded-xl border border-border bg-background px-3 py-1.5 text-xs text-foreground focus:border-primary focus:outline-none"
                   />
                 </div>
+
+                {errorMessage && (
+                  <p className="text-xs text-rose-500 bg-rose-500/10 border border-rose-500/20 rounded-lg p-2 text-center">
+                    {errorMessage}
+                  </p>
+                )}
 
                 {/* Action & Terms */}
                 <div className="pt-1 flex flex-col sm:flex-row items-center justify-between gap-2">
