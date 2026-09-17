@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Phone, ArrowUpRight, X, CalendarCheck } from "lucide-react";
+import { Phone, ArrowUpRight, X } from "lucide-react";
 import { openExpertModal } from "@/components/site/ExpertConsultationModal";
 import { JaagrThreeLines } from "@/components/site/OrganicDecorations";
 
@@ -35,47 +35,45 @@ export function ExpertFloatingBar() {
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         className="fixed bottom-0 left-0 right-0 z-40 w-full bg-gradient-to-r from-[#191024]/95 via-[#29173c]/95 to-[#191024]/95 text-white backdrop-blur-md border-t border-primary/30 shadow-[0_-8px_32px_rgba(40,15,60,0.5)]"
       >
-        <div className="shell flex flex-col sm:flex-row items-center justify-between py-2.5 sm:py-3 gap-2 sm:gap-4 text-xs sm:text-sm">
-          {/* Main Message with Phone Link */}
-          <div className="flex items-center flex-wrap justify-center sm:justify-start gap-1.5 sm:gap-2 text-center sm:text-left">
-            <span className="relative flex h-2 w-2 mr-0.5">
+        <div className="mx-auto flex max-w-7xl items-center justify-between sm:justify-center py-1.5 sm:py-2 px-3 sm:px-8 gap-2 sm:gap-4 text-xs sm:text-sm">
+          {/* Main Message / Phone */}
+          <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+            <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-mint opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-mint" />
             </span>
 
-            <span className="text-white/80 font-normal">Meet our expert! Talk to us at</span>
+            <span className="text-white/80 hidden md:inline whitespace-nowrap text-xs">
+              Meet our expert! Talk to us at
+            </span>
+            <span className="text-white/80 hidden sm:inline md:hidden whitespace-nowrap text-xs">
+              Talk to expert:
+            </span>
 
             <a
               href="tel:+917820001282"
-              className="inline-flex items-center gap-1 font-bold text-mint hover:text-white transition-colors tracking-wide underline sm:no-underline sm:hover:underline"
+              className="inline-flex items-center gap-1 font-bold text-mint hover:text-white transition-colors tracking-tight text-[11px] sm:text-xs md:text-sm whitespace-nowrap"
             >
-              <Phone className="h-3.5 w-3.5 text-mint inline" />
+              <Phone className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-mint shrink-0" />
               +91 78200 01282
             </a>
 
-            <JaagrThreeLines className="h-4 w-5 text-mint/80 hidden lg:inline-block ml-0.5" />
+            <JaagrThreeLines className="h-3.5 w-4 text-mint/80 hidden lg:inline-block ml-0.5" />
 
-            <span className="text-white/60 hidden sm:inline">or</span>
+            <span className="text-white/60 hidden sm:inline text-xs">or</span>
           </div>
 
-          {/* Action CTAs */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          {/* Action CTA + Dismiss Button */}
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               type="button"
               onClick={openExpertModal}
-              className="inline-flex items-center gap-1.5 rounded-full bg-mint px-4 py-1.5 text-xs font-bold text-black shadow-md transition-all hover:bg-mint/90 hover:scale-105 active:scale-95 cursor-pointer"
+              className="group/modal-btn relative overflow-hidden rounded-full bg-mint px-2.5 py-1 sm:px-4 sm:py-1.5 text-[10.5px] sm:text-xs font-bold text-black shadow-md transition-all hover:bg-mint/90 active:scale-95 cursor-pointer whitespace-nowrap"
             >
-              <span>Request a Call</span>
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </button>
-
-            <button
-              type="button"
-              onClick={openExpertModal}
-              className="inline-flex items-center gap-1.5 rounded-full bg-white/10 border border-white/20 px-3.5 py-1.5 text-xs font-semibold text-white transition-all hover:bg-white/20 active:scale-95 cursor-pointer"
-            >
-              <CalendarCheck className="h-3.5 w-3.5 text-primary-soft" />
-              <span>Book Demo</span>
+              <span className="inline-flex items-center gap-1">
+                <span>Request Call</span>
+                <ArrowUpRight className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+              </span>
             </button>
 
             {/* Dismiss Button */}
@@ -83,9 +81,9 @@ export function ExpertFloatingBar() {
               type="button"
               onClick={() => setVisible(false)}
               aria-label="Dismiss announcement"
-              className="rounded-full p-1 text-white/50 hover:text-white hover:bg-white/10 transition-colors ml-1"
+              className="rounded-full p-1 text-white/50 hover:text-white hover:bg-white/10 transition-colors"
             >
-              <X className="h-4 w-4" />
+              <X className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </button>
           </div>
         </div>

@@ -27,7 +27,7 @@ import studentHeroImg from "@/assets/student-hero-banner.png";
 import studentMindfulnessImg from "@/assets/student-mindfulness.jpg";
 import studentFriendshipImg from "@/assets/students-friendship.jpg";
 
-const TITLE = "JAAGR for Students: A Safe 60-Second Daily Emotional Fitness Habit";
+const TITLE = "Jaagr for Students: A Safe 60-Second Daily Emotional Fitness Habit";
 const DESCRIPTION =
   "Daily 60-second check-ins, bite-sized calming exercises, and personalized journeys to help students navigate school stress, focus better, and feel stronger.";
 
@@ -47,21 +47,21 @@ export const Route = createFileRoute("/students")({
 const PILLARS = [
   {
     icon: Activity,
-    title: "JAAGR Pulse",
+    title: "Jaagr Pulse",
     badge: "Daily 60s Check-in",
     desc: "A quick, private daily moment to check in with yourself. Rate how you feel, pick the emotion, and track your patterns over the school term without judgment.",
     points: ["Quick 4-level mood check", "Name your exact feeling", "100% private to you"],
   },
   {
     icon: Sparkles,
-    title: "JAAGR Sparks",
+    title: "Jaagr Sparks",
     badge: "Bite-Sized Calming",
     desc: "Gamified, 60-second neuroscience exercises you can use right before an exam, after a tough class, or when anxiety spikes.",
     points: ["Box breathing reset", "5-4-3-2-1 Sensory grounding", "Quick muscle release"],
   },
   {
     icon: Rocket,
-    title: "JAAGR Journeys",
+    title: "Jaagr Journeys",
     badge: "Personal Skill Tracks",
     desc: "Follow guided paths to level up focus, build exam confidence, improve sleep routines, and navigate friendship drama with calm resilience.",
     points: ["Exam resilience pathway", "Focus & study habits", "Social confidence"],
@@ -75,7 +75,7 @@ const FAQS = [
   },
   {
     q: "Is this therapy or counseling?",
-    a: "No. JAAGR is emotional fitness, like a gym for your mind. It teaches you practical, everyday skills to handle stress, stay calm under pressure, and understand your own emotions before small worries become big problems.",
+    a: "No. Jaagr is emotional fitness, like a gym for your mind. It teaches you practical, everyday skills to handle stress, stay calm under pressure, and understand your own emotions before small worries become big problems.",
   },
   {
     q: "How much time does it take each day?",
@@ -83,7 +83,7 @@ const FAQS = [
   },
   {
     q: "What happens if I log a difficult emotion?",
-    a: "JAAGR immediately suggests a micro-grounding tool (like slow box breathing or muscle release). If you ever need more support, it offers guidance on how to speak with your school counselor securely.",
+    a: "Jaagr immediately suggests a micro-grounding tool (like slow box breathing or muscle release). If you ever need more support, it offers guidance on how to speak with your school counselor securely.",
   },
 ];
 
@@ -97,15 +97,15 @@ export function StudentsPage() {
 
       <main className="pb-20 sm:pb-24">
         {/* HERO SECTION WITH POSTER IMAGE & BRAND LINES */}
-        <section className="relative overflow-hidden pt-36 pb-16 sm:pt-44 lg:pt-48 lg:pb-24">
+        <section className="veil relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pt-28 lg:pb-24">
           <OrganicDecorations />
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-28 top-20 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
+            className="pointer-events-none absolute -left-28 -top-8 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-24 top-40 h-80 w-80 rounded-full bg-mint/20 blur-3xl"
+            className="pointer-events-none absolute -right-24 -top-8 h-80 w-80 rounded-full bg-mint/20 blur-3xl"
           />
 
           <div className="shell relative z-10">
@@ -115,7 +115,7 @@ export function StudentsPage() {
                 <Reveal>
                   <div className="flex items-center gap-3">
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-primary">
-                      <Smile className="h-3.5 w-3.5" /> JAAGR for Students
+                      <Smile className="h-3.5 w-3.5" /> Jaagr for Students
                     </span>
                     <JaagrThreeLines className="h-5 w-7 text-primary/80 dark:text-mint" />
                   </div>
@@ -133,7 +133,7 @@ export function StudentsPage() {
                 <Reveal delay={0.12}>
                   <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
                     School life is full of big moments: exams, expectations, friendships, and future
-                    plans. JAAGR gives you a safe 60-second daily pause to understand how you feel,
+                    plans. Jaagr gives you a safe 60-second daily pause to understand how you feel,
                     calm your mind under pressure, and build lifelong emotional strength.
                   </p>
                 </Reveal>
@@ -182,7 +182,7 @@ export function StudentsPage() {
                     <div className="relative overflow-hidden rounded-[2rem] border border-border/80 bg-card shadow-2xl">
                       <img
                         src={studentHeroImg}
-                        alt="Every emotion is valid - Making young minds emotionally aware with JAAGR Mind"
+                        alt="Every emotion is valid - Making young minds emotionally aware with Jaagr Mind"
                         className="w-full h-auto object-cover transition-transform duration-700 hover:scale-102"
                       />
 
@@ -241,7 +241,7 @@ export function StudentsPage() {
                         : "bg-secondary text-muted-foreground hover:text-foreground",
                     )}
                   >
-                    1. JAAGR Pulse (Check-in)
+                    1. Jaagr Pulse (Check-in)
                   </button>
                   <button
                     type="button"
@@ -253,7 +253,7 @@ export function StudentsPage() {
                         : "bg-secondary text-muted-foreground hover:text-foreground",
                     )}
                   >
-                    2. JAAGR Spark (Calm Reset)
+                    2. Jaagr Spark (Calm Reset)
                   </button>
                 </div>
 
@@ -378,7 +378,7 @@ export function StudentsPage() {
             <div className="max-w-3xl">
               <Reveal>
                 <div className="flex items-center gap-2">
-                  <Eyebrow>What you get with JAAGR</Eyebrow>
+                  <Eyebrow>What you get with Jaagr</Eyebrow>
                   <JaagrThreeLines className="h-4 w-5 text-primary" />
                 </div>
                 <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -547,9 +547,9 @@ export function StudentsPage() {
             <div className="flex justify-center mb-3">
               <JaagrThreeLines className="h-6 w-8 text-primary" />
             </div>
-            <h2 className="text-3xl font-extrabold text-foreground">Want JAAGR at your school?</h2>
+            <h2 className="text-3xl font-extrabold text-foreground">Want Jaagr at your school?</h2>
             <p className="mt-3 text-sm text-muted-foreground">
-              Tell your school counselor, principal, or homeroom teacher about JAAGR Mind.
+              Tell your school counselor, principal, or homeroom teacher about Jaagr Mind.
             </p>
             <div className="mt-8 flex justify-center gap-3">
               <Link

@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * JAAGR MIND design system.
+ * Jaagr Mind design system.
  * Palette: lavender / violet / deep indigo / soft lilac / warm off-white / mint.
  * All colors in oklch. Never hardcode colors in components.
  */
@@ -59,9 +59,36 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --font-display: "Nunito", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-hand: "Caveat", ui-serif, cursive;
+  --font-display: "Gotham Rounded", "GothamRounded", "Quicksand", "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Museo Sans", "MuseoSans", "Plus Jakarta Sans", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-hand: "Segoe Print", "SegoePrint", "Caveat", "Chalkboard SE", "Comic Sans MS", cursive;
+}
+
+/*
+ * Brand Kit Typefaces:
+ * 1. Primary: Gotham Rounded (Light, Book, Medium, Bold) - Friendly and modern headlines
+ * 2. Highlight: Segoe Print (Regular, Bold) - Human, handwritten touch for emotional moments
+ * 3. Body: Museo Sans (100, 300, 500, 700, 900) - Clean, readable, neutral body copy
+ */
+@font-face {
+  font-family: 'Gotham Rounded';
+  src: local('Gotham Rounded'), local('GothamRounded'), local('Gotham Rounded Book'), local('Gotham Rounded Medium'), local('Gotham Rounded Bold');
+  font-weight: 300 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Museo Sans';
+  src: local('Museo Sans'), local('MuseoSans'), local('MuseoSans-500'), local('MuseoSans-700'), local('Museo Sans 500'), local('Museo Sans 700'), local('MuseoSans-300'), local('MuseoSans-100');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Segoe Print';
+  src: local('Segoe Print'), local('SegoePrint'), local('Segoe Print Bold');
+  font-weight: 400 700;
+  font-display: swap;
 }
 
 :root {

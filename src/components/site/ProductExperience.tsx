@@ -16,7 +16,7 @@ const TABS: { id: TabId; label: string }[] = [
 const COPY: Record<TabId, { title: string; body: string; points: string[] }> = {
   student: {
     title: "A calm, 60-second daily habit",
-    body: "Students check in with JAAGR Pulse, practise one Spark, and keep moving along their Journey. Self-awareness becomes routine, not an event.",
+    body: "Students check in with Jaagr Pulse, practise one Spark, and keep moving along their Journey. Self-awareness becomes routine, not an event.",
     points: ["Daily Pulse check-in", "One Spark activity", "Journey progress"],
   },
   teacher: {
@@ -40,7 +40,7 @@ function StudentPanel() {
     <div className="grid gap-4 sm:grid-cols-2">
       <div className="rounded-2xl border border-border bg-background p-5">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-          JAAGR Pulse
+          Jaagr Pulse
         </p>
         <p className="mt-3 text-sm text-muted-foreground">How are you feeling today?</p>
         <div className="mt-4 flex gap-2">
@@ -61,7 +61,7 @@ function StudentPanel() {
       </div>
       <div className="rounded-2xl border border-border bg-background p-5">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-          JAAGR Spark
+          Jaagr Spark
         </p>
         <div className="mt-3 flex items-center gap-3">
           <span className="flex h-11 w-11 items-center justify-center rounded-full bg-mint/40 text-mint-foreground">
@@ -83,7 +83,7 @@ function StudentPanel() {
       </div>
       <div className="rounded-2xl border border-border bg-background p-5 sm:col-span-2">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-          JAAGR Journey
+          Jaagr Journey
         </p>
         <div className="mt-4 flex items-center gap-2">
           {["Notice", "Name", "Regulate", "Reflect", "Repeat"].map((s, i) => (
@@ -158,7 +158,7 @@ function ParentPanel() {
     <div className="space-y-4">
       <div className="rounded-2xl border border-border bg-background p-5">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-          JAAGR At Home
+          Jaagr At Home
         </p>
         <p className="mt-2 text-sm font-semibold">Weekly Parent-Teen Conversation Sparks</p>
         <div className="mt-4 space-y-2.5">
@@ -173,7 +173,7 @@ function ParentPanel() {
       <div className="rounded-2xl border border-mint/50 bg-mint/15 p-5">
         <p className="text-sm font-semibold text-mint-foreground">Parent-Teen Trust Guarantee</p>
         <p className="mt-1.5 text-sm text-muted-foreground">
-          No invasive test scores or surveillance. JAAGR builds shared emotional vocabulary so teens
+          No invasive test scores or surveillance. Jaagr builds shared emotional vocabulary so teens
           open up naturally on their own terms.
         </p>
       </div>

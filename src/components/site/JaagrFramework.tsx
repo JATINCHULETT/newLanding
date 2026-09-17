@@ -56,7 +56,7 @@ function Step({ step, index }: { step: (typeof STEPS)[number]; index: number }) 
   );
 }
 
-export function JAAGRFramework() {
+export function JaagrFramework() {
   const trackRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: trackRef,

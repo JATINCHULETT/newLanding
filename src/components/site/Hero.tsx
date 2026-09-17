@@ -4,6 +4,7 @@ import { ArrowDown, ArrowRight, BadgeCheck, Lock, MapPin, ShieldCheck } from "lu
 import heroImg from "@/assets/hero-ecosystem.png";
 import floatImg from "@/assets/float-objects.png";
 import { JaagrThreeLines, OrganicDecorations } from "@/components/site/OrganicDecorations";
+import { openExpertModal } from "@/components/site/ExpertConsultationModal";
 
 const TRUST = [
   { icon: BadgeCheck, label: "Evidence-informed" },
@@ -41,20 +42,20 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="veil relative overflow-hidden pb-16 pt-28 sm:pt-32 lg:pb-28 lg:pt-40"
+      className="veil relative overflow-hidden pb-16 pt-20 sm:pt-24 lg:pb-24 lg:pt-26"
     >
       <OrganicDecorations />
       <div
         aria-hidden
-        className="dotgrid pointer-events-none absolute left-2 top-40 hidden h-40 w-28 opacity-70 lg:block"
+        className="dotgrid pointer-events-none absolute left-2 top-24 hidden h-40 w-28 opacity-70 lg:block"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 top-10 h-72 w-72 rounded-full bg-mint/25 blur-3xl"
+        className="pointer-events-none absolute -right-24 -top-8 h-72 w-72 rounded-full bg-mint/25 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
+        className="pointer-events-none absolute -left-28 -top-8 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
       />
 
       <div className="shell grid items-center gap-14 lg:grid-cols-[1.02fr_1fr] lg:gap-10">
@@ -112,13 +113,14 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.36 }}
             className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
-            <a
-              href="#book-demo"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-0.5 sm:px-7 sm:py-4 sm:text-base"
+            <button
+              type="button"
+              onClick={openExpertModal}
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-0.5 sm:px-7 sm:py-4 sm:text-base cursor-pointer"
             >
-              Book a School Demo
+              Request a Call
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+            </button>
             <a
               href="#why-jaagr"
               className="group inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 sm:px-7 sm:py-4 sm:text-base"
@@ -185,7 +187,7 @@ export function Hero() {
               style={{ top: chip.top, left: chip.left, x: mx, y: my }}
               className="absolute z-20 hidden rounded-full border border-border bg-card/90 px-3.5 py-1.5 text-xs font-semibold text-secondary-foreground shadow-[var(--shadow-soft)] backdrop-blur sm:inline-flex"
             >
-              JAAGR {chip.label}
+              Jaagr {chip.label}
             </motion.span>
           ))}
         </motion.div>

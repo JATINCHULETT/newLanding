@@ -4,20 +4,20 @@ import classroomImg from "@/assets/story-classroom.png";
 import { OrganicDecorations } from "@/components/site/OrganicDecorations";
 
 const PATHWAY = [
-  { icon: Activity, name: "JAAGR Pulse", body: "Student checks in." },
+  { icon: Activity, name: "Jaagr Pulse", body: "Student checks in." },
   {
     icon: Sparkles,
-    name: "JAAGR Spark",
+    name: "Jaagr Spark",
     body: "Student practises a relevant coping or attention skill.",
   },
   {
     icon: Route,
-    name: "JAAGR Path",
+    name: "Jaagr Path",
     body: "Repeated practice builds everyday emotional and self-management skills.",
   },
   {
     icon: BarChart3,
-    name: "JAAGR Insights",
+    name: "Jaagr Insights",
     body: "School sees aggregated patterns and programme-level insights.",
   },
 ];

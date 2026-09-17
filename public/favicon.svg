@@ -17,7 +17,7 @@
   <rect width="128" height="128" rx="28" fill="url(#bg-grad)"/>
   <rect x="2" y="2" width="124" height="124" rx="26" fill="none" stroke="#8161A3" stroke-opacity="0.35" stroke-width="2"/>
 
-  <!-- Brand purple wings/petals (JAAGR Mark) -->
+  <!-- Brand purple wings/petals (Jaagr Mark) -->
   <path d="M92 24 L106 18 C108 17 110 19 109 21 L103 29 C102 30 100 30 99 29 L92 24 Z" fill="#D8B4FE" />
   <path d="M96 34 L110 28 C112 27 114 29 113 31 L107 39 C106 40 104 40 103 39 L96 34 Z" fill="url(#accent-grad)" />
   <path d="M98 45 L108 40 C110 39 111 41 110 42 L105 49 C104 50 102 50 101 49 L98 45 Z" fill="#8161A3" />
@@ -25,7 +25,7 @@
   <!-- Mint energy accent dot -->
   <circle cx="111" cy="14" r="3.5" fill="#5EEAD4" filter="url(#glow)"/>
 
-  <!-- JAAGR 'J' monogram in crisp warm white -->
+  <!-- Jaagr 'J' monogram in crisp warm white -->
   <path d="M72 32 
            C75 32 77 34 77 37
            L77 82

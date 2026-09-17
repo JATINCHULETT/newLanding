@@ -1,8 +1,8 @@
-# JAAGR Mind Landing Page
+# Jaagr Mind Landing Page
 
 Emotional Fitness System for Indian Schools.
 
-JAAGR Mind helps Indian schools notice students who need support earlier, equip every teacher to respond with confidence, and build emotional strength into everyday school life.
+Jaagr Mind helps Indian schools notice students who need support earlier, equip every teacher to respond with confidence, and build emotional strength into everyday school life.
 
 ## Development
 

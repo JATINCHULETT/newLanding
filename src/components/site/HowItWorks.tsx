@@ -8,7 +8,7 @@ const PHASES = [
     title: "Prepare",
     steps: [
       { name: "School Discovery", when: "Week 1" },
-      { name: "JAAGR School Plan", when: "Week 2" },
+      { name: "Jaagr School Plan", when: "Week 2" },
       { name: "Staff Capability", when: "Month 1" },
     ],
   },
@@ -17,10 +17,10 @@ const PHASES = [
     label: "Phase 2",
     title: "Activate",
     steps: [
-      { name: "JAAGR Pulse", when: "Throughout the term" },
-      { name: "JAAGR Spark", when: "Throughout the term" },
-      { name: "JAAGR Journey", when: "Each term" },
-      { name: "JAAGR Path", when: "Throughout the year" },
+      { name: "Jaagr Pulse", when: "Throughout the term" },
+      { name: "Jaagr Spark", when: "Throughout the term" },
+      { name: "Jaagr Journey", when: "Each term" },
+      { name: "Jaagr Path", when: "Throughout the year" },
       { name: "Parent Engagement", when: "Each term" },
     ],
   },
@@ -29,7 +29,7 @@ const PHASES = [
     label: "Phase 3",
     title: "Understand",
     steps: [
-      { name: "JAAGR Insights", when: "Throughout the year" },
+      { name: "Jaagr Insights", when: "Throughout the year" },
       { name: "Annual Wellbeing Review", when: "Year end" },
     ],
   },

@@ -19,17 +19,17 @@ const GROUPS = [
     items: [
       {
         icon: Sparkles,
-        title: "JAAGR Sparks",
+        title: "Jaagr Sparks",
         body: "60-second neuroscience-informed, game-inspired activities that help students practise coping skills, emotional regulation and resilience.",
       },
       {
         icon: Activity,
-        title: "JAAGR Pulse",
+        title: "Jaagr Pulse",
         body: "Daily emotional check-ins that encourage self-awareness and help students recognise and understand how they feel.",
       },
       {
         icon: Rocket,
-        title: "JAAGR Journeys",
+        title: "Jaagr Journeys",
         body: "Personalised skill-building journeys that strengthen focus, confidence, healthy habits and lifelong stress management.",
       },
     ],
@@ -41,7 +41,7 @@ const GROUPS = [
     items: [
       {
         icon: Eye,
-        title: "JAAGR Insights",
+        title: "Jaagr Insights",
         body: "Identify students who may need additional support through simple classroom wellbeing insights.",
       },
       {

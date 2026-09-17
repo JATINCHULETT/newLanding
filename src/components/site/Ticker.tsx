@@ -15,8 +15,8 @@ export function Ticker() {
 
   return (
     <section
-      aria-label="What JAAGR Mind includes"
-      className="border-y border-border/70 bg-card/50 py-5"
+      aria-label="What Jaagr Mind includes"
+      className="border-y border-white/15 bg-[#7061F0] py-4 sm:py-5 text-white shadow-sm"
     >
       <div className="relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_9%,black_91%,transparent)]">
         <div
@@ -25,10 +25,8 @@ export function Ticker() {
         >
           {row.map((item, i) => (
             <span key={`${item}-${i}`} className="flex items-center gap-10">
-              <span className="text-sm font-medium tracking-wide text-muted-foreground">
-                {item}
-              </span>
-              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-primary/40" />
+              <span className="text-sm font-medium tracking-wide text-white">{item}</span>
+              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-white/60" />
             </span>
           ))}
         </div>

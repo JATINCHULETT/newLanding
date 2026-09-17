@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowRight, Menu, Moon, Sun, X } from "lucide-react";
+import { ArrowRight, LogIn, Menu, Moon, Sun, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/hooks/use-theme";
+import { openExpertModal } from "@/components/site/ExpertConsultationModal";
 
 const LINKS = [
   { label: "Why Jaagr", href: "/#why-jaagr" },
@@ -34,75 +35,74 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <div
+    <header className="sticky top-0 z-50 -mb-[4.25rem] sm:-mb-[4.75rem] pt-2.5 sm:pt-3.5 px-3 sm:px-6 transition-all duration-300 pointer-events-none">
+      <nav
+        aria-label="Primary"
         className={cn(
-          "transition-all duration-500 ease-out",
-          scrolled
-            ? "border-b border-border/70 bg-background/80 backdrop-blur-xl shadow-[0_10px_30px_-24px_oklch(0.32_0.09_288/0.6)]"
-            : "border-b border-transparent bg-transparent",
+          "pointer-events-auto mx-auto flex max-w-7xl items-center justify-between rounded-full border border-border/70 bg-card/90 px-4 py-2 sm:px-6 sm:py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-xl transition-all duration-300",
+          scrolled && "border-border/90 bg-card/95 shadow-[var(--shadow-lift)]"
         )}
       >
-        <nav
-          aria-label="Main"
-          className={cn(
-            "shell flex items-center justify-between transition-all duration-500",
-            scrolled ? "h-14" : "h-20",
-          )}
-        >
-          <a href="/" className="shrink-0">
-            <Logo />
+        <Logo />
+
+        <ul className="hidden items-center gap-1 lg:flex xl:gap-2">
+          {LINKS.map((l) => (
+            <li key={l.href}>
+              <a
+                href={l.href}
+                className="relative rounded-full px-3.5 py-1.5 text-sm font-medium text-muted-foreground transition-all duration-300 hover:bg-secondary/70 hover:text-foreground"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex items-center gap-2 sm:gap-3">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={
+              theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
+            }
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/80 bg-card/80 text-foreground transition-all duration-300 hover:border-primary/50 hover:bg-secondary active:scale-95 shadow-sm sm:h-9 sm:w-9 cursor-pointer"
+          >
+            {theme === "dark" ? (
+              <Sun className="h-4 w-4 text-primary" />
+            ) : (
+              <Moon className="h-4 w-4 text-primary" />
+            )}
+          </button>
+
+          {/* Sign In Button */}
+          <a
+            href="https://login.jaagrmind.com"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-card/80 px-3.5 py-1.5 text-xs font-semibold text-foreground transition-all duration-300 hover:border-primary/50 hover:bg-secondary hover:text-primary active:scale-95 shadow-sm sm:px-4 sm:py-2 sm:text-sm"
+          >
+            <LogIn className="h-3.5 w-3.5 text-primary" />
+            <span>Sign In</span>
           </a>
 
-          <ul className="hidden items-center gap-7 lg:flex">
-            {LINKS.map((l) => (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-                  className="relative text-sm font-medium text-muted-foreground transition-colors hover:text-primary after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100"
-                >
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <button
+            type="button"
+            onClick={openExpertModal}
+            className="group hidden items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-xs sm:px-5 sm:py-2 sm:text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-0.5 sm:inline-flex cursor-pointer"
+          >
+            Request a Call
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
 
-          <div className="flex items-center gap-2.5">
-            {/* Dark / Light Mode Toggle Button */}
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card/80 text-foreground transition-all duration-300 hover:scale-105 hover:bg-secondary active:scale-95 cursor-pointer"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-4.5 w-4.5 text-amber-400 transition-transform duration-300" />
-              ) : (
-                <Moon className="h-4.5 w-4.5 text-primary transition-transform duration-300" />
-              )}
-            </button>
-
-            <a
-              href="/#book-demo"
-              className="group hidden items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-0.5 sm:inline-flex"
-            >
-              Book a School Demo
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-
-            <button
-              type="button"
-              onClick={() => setOpen((v) => !v)}
-              aria-label={open ? "Close menu" : "Open menu"}
-              aria-expanded={open}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground cursor-pointer lg:hidden"
-            >
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
-          </div>
-        </nav>
-      </div>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-foreground cursor-pointer lg:hidden"
+          >
+            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          </button>
+        </div>
+      </nav>
 
       <AnimatePresence>
         {open && (
@@ -114,7 +114,7 @@ export function Navbar() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 top-14 sm:top-20 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+              className="fixed inset-0 top-14 sm:top-20 bg-black/60 backdrop-blur-sm z-40 lg:hidden pointer-events-auto"
             />
 
             {/* Menu drawer */}
@@ -123,10 +123,10 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="relative z-50 lg:hidden"
+              className="relative z-50 lg:hidden pointer-events-auto"
             >
-              <div className="shell pb-6 pt-2">
-                <div className="surface overflow-hidden p-3 shadow-2xl border border-border/80 bg-background/95 backdrop-blur-2xl">
+              <div className="mx-auto max-w-7xl px-3 sm:px-6 pb-6 pt-2">
+                <div className="surface overflow-hidden rounded-3xl p-3 shadow-2xl border border-border/80 bg-background/95 backdrop-blur-2xl">
                   <ul className="flex flex-col">
                     {LINKS.map((l, i) => (
                       <motion.li
@@ -146,14 +146,25 @@ export function Navbar() {
                     ))}
                   </ul>
 
-                  <div className="mt-3 border-t border-border/80 pt-3">
+                  <div className="mt-3 flex flex-col gap-2 border-t border-border/80 pt-3">
                     <a
-                      href="/#book-demo"
+                      href="https://login.jaagrmind.com"
                       onClick={() => setOpen(false)}
-                      className="flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3.5 text-base font-semibold text-primary-foreground shadow-md transition-all active:scale-[0.98]"
+                      className="flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-4 py-3 text-base font-semibold text-foreground transition-all active:scale-[0.98] hover:bg-secondary"
                     >
-                      Book a School Demo <ArrowRight className="h-4 w-4" />
+                      <LogIn className="h-4 w-4 text-primary" />
+                      Sign In
                     </a>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setOpen(false);
+                        openExpertModal();
+                      }}
+                      className="flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3.5 text-base font-semibold text-primary-foreground shadow-md transition-all active:scale-[0.98] cursor-pointer"
+                    >
+                      Request a Call <ArrowRight className="h-4 w-4" />
+                    </button>
                   </div>
                 </div>
               </div>

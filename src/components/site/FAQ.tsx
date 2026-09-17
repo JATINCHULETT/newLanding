@@ -8,7 +8,7 @@ import { OrganicDecorations } from "@/components/site/OrganicDecorations";
 const ITEMS = [
   {
     q: "Is this therapy or counselling?",
-    a: "No. JAAGR Mind is a preventive, skills-based system. It teaches emotional fitness the way schools teach physical fitness: through short, repeatable practice. When a student needs clinical support, the system helps the school notice earlier and escalate to the right professional.",
+    a: "No. Jaagr Mind is a preventive, skills-based system. It teaches emotional fitness the way schools teach physical fitness: through short, repeatable practice. When a student needs clinical support, the system helps the school notice earlier and escalate to the right professional.",
   },
   {
     q: "How much extra work is this for teachers?",

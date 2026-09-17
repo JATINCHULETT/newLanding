@@ -35,7 +35,7 @@ export function SchoolEcosystem() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-5 text-lg text-muted-foreground">
-              JAAGR helps schools build a proactive wellbeing system, equipping students with
+              Jaagr helps schools build a proactive wellbeing system, equipping students with
               practical skills, teachers with confidence, parents with guidance, and school leaders
               with meaningful insights.
             </p>

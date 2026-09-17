@@ -64,7 +64,7 @@ export function DemoForm() {
               </Reveal>
               <Reveal delay={0.12}>
                 <p className="mt-5 max-w-md text-base leading-relaxed opacity-80">
-                  Tell us a little about your school. We&apos;ll show you exactly how JAAGR Mind
+                  Tell us a little about your school. We&apos;ll show you exactly how Jaagr Mind
                   would work in your classrooms, with your teachers, from day one.
                 </p>
               </Reveal>
@@ -89,7 +89,7 @@ export function DemoForm() {
                 <div className="mt-8 relative overflow-hidden rounded-2xl border border-white/20 bg-black/40 shadow-xl max-w-sm">
                   <img
                     src={emotionsMadeEasyImg}
-                    alt="Emotions Made Easy - JAAGR Mind"
+                    alt="Emotions Made Easy - Jaagr Mind"
                     className="w-full h-44 object-cover"
                   />
                   <div className="p-3 bg-black/75 backdrop-blur-md text-xs flex items-center justify-between text-white border-t border-white/10">

@@ -8,6 +8,7 @@ const COLUMNS = [
       { label: "Why Jaagr", href: "/#why-jaagr" },
       { label: "How It Works", href: "/#how-it-works" },
       { label: "About Us", href: "/#about-us" },
+      { label: "Sign In", href: "https://login.jaagrmind.com" },
     ],
   },
   {
@@ -90,7 +91,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-border pt-6 text-xs opacity-65 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} JAAGR Mind. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Jaagr Mind. All rights reserved.</p>
           <p>Not a therapy or clinical service. Preventive, skills-based school programme.</p>
         </div>
       </div>

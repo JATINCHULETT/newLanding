@@ -5,10 +5,10 @@ export function Logo({ tone, className = "" }: { tone?: "dark" | "light"; classN
   // If tone is explicitly "light" (e.g. in the dark Footer), always render the white/light logo
   if (tone === "light") {
     return (
-      <span className={`inline-flex items-center ${className}`} aria-label="JAAGR MIND">
+      <span className={`inline-flex items-center ${className}`} aria-label="Jaagr Mind">
         <img
           src={lightLogo}
-          alt="JAAGR MIND"
+          alt="Jaagr Mind"
           className="h-8 w-auto max-w-[160px] object-contain sm:h-9 sm:max-w-[180px]"
         />
       </span>
@@ -17,17 +17,17 @@ export function Logo({ tone, className = "" }: { tone?: "dark" | "light"; classN
 
   // Default: adapts automatically to light / dark mode
   return (
-    <span className={`relative inline-flex items-center ${className}`} aria-label="JAAGR MIND">
+    <span className={`relative inline-flex items-center ${className}`} aria-label="Jaagr Mind">
       {/* Light mode: dark colored logo */}
       <img
         src={darkLogo}
-        alt="JAAGR MIND"
+        alt="Jaagr Mind"
         className="h-8 w-auto max-w-[160px] object-contain dark:hidden sm:h-9 sm:max-w-[180px]"
       />
       {/* Dark mode: light colored logo */}
       <img
         src={lightLogo}
-        alt="JAAGR MIND"
+        alt="Jaagr Mind"
         className="hidden h-8 w-auto max-w-[160px] object-contain dark:block sm:h-9 sm:max-w-[180px]"
       />
     </span>

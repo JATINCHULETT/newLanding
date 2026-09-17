@@ -20,7 +20,7 @@ import { OrganicDecorations } from "@/components/site/OrganicDecorations";
 import { Eyebrow, Reveal } from "@/lib/motion-primitives";
 import { cn } from "@/lib/utils";
 
-const TITLE = "JAAGR for Teachers: Classroom Wellbeing Insights with Zero Extra Workload";
+const TITLE = "Jaagr for Teachers: Classroom Wellbeing Insights with Zero Extra Workload";
 const DESCRIPTION =
   "Equip teachers with simple, non-clinical classroom wellbeing insights and ready-to-use strategies that fit naturally into the existing school timetable.";
 
@@ -73,12 +73,12 @@ const TEACHER_BENEFITS = [
   {
     icon: Compass,
     title: "Practical Next Steps",
-    desc: "Noticing an emotional shift is only useful if you know how to respond. JAAGR pairs every pattern with a concrete, 2-minute strategy.",
+    desc: "Noticing an emotional shift is only useful if you know how to respond. Jaagr pairs every pattern with a concrete, 2-minute strategy.",
   },
   {
     icon: HeartHandshake,
     title: "Not Therapy. Training.",
-    desc: "Teachers are educators, not clinicians. JAAGR provides preventive, non-clinical skill training so you feel confident in your role.",
+    desc: "Teachers are educators, not clinicians. Jaagr provides preventive, non-clinical skill training so you feel confident in your role.",
   },
 ];
 
@@ -91,22 +91,22 @@ export function TeachersPage() {
 
       <main className="pb-20 sm:pb-24">
         {/* HERO SECTION */}
-        <section className="relative overflow-hidden pt-36 pb-20 sm:pt-44 lg:pt-48 lg:pb-28">
+        <section className="veil relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pt-28 lg:pb-24">
           <OrganicDecorations />
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-24 top-20 h-80 w-80 rounded-full bg-mint/20 blur-3xl"
+            className="pointer-events-none absolute -right-24 -top-8 h-80 w-80 rounded-full bg-mint/20 blur-3xl"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-28 bottom-10 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
+            className="pointer-events-none absolute -left-28 -top-8 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
           />
 
           <div className="shell relative z-10 text-center max-w-4xl mx-auto">
             <Reveal>
               <div className="flex justify-center">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-mint/40 bg-mint/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-mint-foreground">
-                  <BookOpen className="h-3.5 w-3.5" /> JAAGR for Teachers
+                  <BookOpen className="h-3.5 w-3.5" /> Jaagr for Teachers
                 </span>
               </div>
             </Reveal>
@@ -120,7 +120,7 @@ export function TeachersPage() {
 
             <Reveal delay={0.12}>
               <p className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed">
-                Teachers notice subtle changes in students long before a crisis. JAAGR gives your
+                Teachers notice subtle changes in students long before a crisis. Jaagr gives your
                 staff simple classroom-level signals and 2-minute strategies to respond with
                 confidence, without adding a single minute of grading or admin work.
               </p>
@@ -202,7 +202,7 @@ export function TeachersPage() {
                   Practical strategies for real school moments
                 </h2>
                 <p className="mt-3 text-sm text-muted-foreground max-w-xl mx-auto">
-                  Select a common classroom situation to see the exact 2-minute strategy JAAGR
+                  Select a common classroom situation to see the exact 2-minute strategy Jaagr
                   equips teachers with.
                 </p>
               </div>
@@ -266,7 +266,7 @@ export function TeachersPage() {
               Empower your school&apos;s teachers today
             </h2>
             <p className="mt-3 text-sm text-muted-foreground">
-              Schedule a 20-minute school demonstration to see how JAAGR supports your staff.
+              Schedule a 20-minute school demonstration to see how Jaagr supports your staff.
             </p>
             <div className="mt-8 flex justify-center gap-3">
               <Link

@@ -76,7 +76,7 @@ export function TrustSection() {
 
             <Reveal delay={0.12}>
               <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                JAAGR brings together student skill-building, teacher capability, parent engagement
+                Jaagr brings together student skill-building, teacher capability, parent engagement
                 and school-wide insights in one structured, school-ready programme.
               </p>
             </Reveal>

@@ -105,8 +105,8 @@ export function RightMiddleHalftone({ className = "" }: { className?: string }) 
 }
 
 /**
- * 4. Top-right: JAAGR Brand Spark Lines (Three Straight Bars)
- * The signature 3 radiant straight pill bars from the official JAAGR logo mark
+ * 4. Top-right: Jaagr Brand Spark Lines (Three Straight Bars)
+ * The signature 3 radiant straight pill bars from the official Jaagr logo mark
  */
 export function JaagrThreeLines({ className = "", color }: { className?: string; color?: string }) {
   return (
@@ -257,7 +257,7 @@ export function OrganicDecorations({
         </div>
       )}
 
-      {/* 4. Top-right: JAAGR signature brand three straight spark lines */}
+      {/* 4. Top-right: Jaagr signature brand three straight spark lines */}
       {showTopRightLeafStrokes && (
         <div className="absolute right-4 top-4 sm:right-8 sm:top-8">
           <JaagrThreeLines className="w-14 sm:w-18 md:w-24 text-primary/70 dark:text-mint/80 transition-transform duration-500 hover:scale-110" />

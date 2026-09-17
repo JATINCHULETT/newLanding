@@ -27,14 +27,14 @@ export function Founder() {
             <div className="surface relative overflow-hidden rounded-3xl p-2">
               <img
                 src={founderPhoto}
-                alt="Dr. Srishty Puri Gajbhiye, founder of JAAGR Mind"
+                alt="Dr. Srishty Puri Gajbhiye, founder of Jaagr Mind"
                 loading="lazy"
                 className="h-full w-full rounded-[1.35rem] object-cover object-[50%_15%]"
               />
             </div>
             <div className="surface absolute -bottom-4 right-2 max-w-[13rem] rounded-2xl px-4 py-2.5 sm:-bottom-7 sm:py-3 shadow-lg">
               <p className="text-sm font-bold">Dr. Srishty Puri Gajbhiye</p>
-              <p className="mt-0.5 text-xs text-muted-foreground">Founder, JAAGR Mind</p>
+              <p className="mt-0.5 text-xs text-muted-foreground">Founder, Jaagr Mind</p>
             </div>
           </div>
         </Reveal>
@@ -52,7 +52,7 @@ export function Founder() {
           <Reveal delay={0.12}>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
               <p>
-                JAAGR Mind began inside real classrooms, staff rooms and parent meetings, not in a
+                Jaagr Mind began inside real classrooms, staff rooms and parent meetings, not in a
                 lab. Working with students across Indian schools made one pattern impossible to
                 ignore: children almost always show early signs, but schools rarely have a system to
                 notice them in time.
@@ -83,7 +83,7 @@ export function Founder() {
               <Quote className="h-6 w-6 shrink-0 text-primary" aria-hidden />
               <div>
                 <blockquote className="hand text-xl leading-snug text-foreground sm:text-2xl">
-                  “JAAGR Mind does not wait for children to struggle loudly. It helps schools build
+                  “Jaagr Mind does not wait for children to struggle loudly. It helps schools build
                   the skills and systems that allow them to notice, support and strengthen students
                   earlier.”
                 </blockquote>

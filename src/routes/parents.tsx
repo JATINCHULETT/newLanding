@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -17,7 +17,7 @@ import { Footer } from "@/components/site/Footer";
 import { OrganicDecorations } from "@/components/site/OrganicDecorations";
 import { Eyebrow, Reveal } from "@/lib/motion-primitives";
 
-const TITLE = "JAAGR for Parents: Nurturing Emotional Resilience & Family Trust";
+const TITLE = "Jaagr for Parents: Nurturing Emotional Resilience & Family Trust";
 const DESCRIPTION =
   "Practical conversation starters and gentle guidance to help parents understand adolescent pressure, build emotional resilience, and connect with care at home.";
 
@@ -67,7 +67,7 @@ const PARENT_PILLARS = [
   {
     icon: Heart,
     title: "Care, Not Judgment",
-    desc: "Adolescent brains undergo massive rewiring. JAAGR helps parents understand natural emotional waves during middle and high school with empathy.",
+    desc: "Adolescent brains undergo massive rewiring. Jaagr helps parents understand natural emotional waves during middle and high school with empathy.",
   },
   {
     icon: Lock,
@@ -79,15 +79,15 @@ const PARENT_PILLARS = [
 const PARENT_FAQS = [
   {
     q: "Will I get an app to monitor my child's daily emotions?",
-    a: "No. Child psychologists confirm that surveillance breeds anxiety and dishonest reporting. JAAGR empowers students to develop self-awareness independently, while providing parents with shared language and conversation guidance to foster genuine connection at home.",
+    a: "No. Child psychologists confirm that surveillance breeds anxiety and dishonest reporting. Jaagr empowers students to develop self-awareness independently, while providing parents with shared language and conversation guidance to foster genuine connection at home.",
   },
   {
-    q: "How can JAAGR help my child during board exam stress?",
-    a: "JAAGR Sparks teach evidence-based physiological techniques (like box breathing and cognitive reframing) that students practice in 60 seconds daily. When exam tension hits, these routines kick in automatically to lower panic.",
+    q: "How can Jaagr help my child during board exam stress?",
+    a: "Jaagr Sparks teach evidence-based physiological techniques (like box breathing and cognitive reframing) that students practice in 60 seconds daily. When exam tension hits, these routines kick in automatically to lower panic.",
   },
   {
-    q: "How can our school adopt JAAGR Mind?",
-    a: "Most schools launch JAAGR following a parent or school leader recommendation. You can share our information with your principal or PTA committee, and we provide a full school demonstration.",
+    q: "How can our school adopt Jaagr Mind?",
+    a: "Most schools launch Jaagr following a parent or school leader recommendation. You can share our information with your principal or PTA committee, and we provide a full school demonstration.",
   },
 ];
 
@@ -106,22 +106,22 @@ export function ParentsPage() {
 
       <main className="pb-20 sm:pb-24">
         {/* HERO SECTION */}
-        <section className="relative overflow-hidden pt-36 pb-20 sm:pt-44 lg:pt-48 lg:pb-28">
+        <section className="veil relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pt-28 lg:pb-24">
           <OrganicDecorations />
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-28 top-20 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
+            className="pointer-events-none absolute -left-28 -top-8 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-mint/20 blur-3xl"
+            className="pointer-events-none absolute -right-24 -top-8 h-80 w-80 rounded-full bg-mint/20 blur-3xl"
           />
 
           <div className="shell relative z-10 text-center max-w-4xl mx-auto">
             <Reveal>
               <div className="flex justify-center">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-primary">
-                  <Home className="h-3.5 w-3.5" /> JAAGR for Parents
+                  <Home className="h-3.5 w-3.5" /> Jaagr for Parents
                 </span>
               </div>
             </Reveal>
@@ -135,7 +135,7 @@ export function ParentsPage() {
 
             <Reveal delay={0.12}>
               <p className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed">
-                Adolescents navigate immense pressure every day. JAAGR gives parents practical
+                Adolescents navigate immense pressure every day. Jaagr gives parents practical
                 conversation starters and gentle insights to nurture emotional strength at home and
                 build lasting family trust.
               </p>
@@ -223,7 +223,7 @@ export function ParentsPage() {
           <div className="shell">
             <div className="max-w-3xl">
               <Reveal>
-                <Eyebrow>Why parents appreciate JAAGR</Eyebrow>
+                <Eyebrow>Why parents appreciate Jaagr</Eyebrow>
                 <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">
                   Supporting your child without adding pressure
                 </h2>
@@ -276,10 +276,10 @@ export function ParentsPage() {
         <section className="relative py-20 bg-primary/10 border-t border-primary/20 text-center">
           <div className="shell max-w-2xl mx-auto">
             <h2 className="text-3xl font-extrabold text-foreground">
-              Bring JAAGR to your child&apos;s school
+              Bring Jaagr to your child&apos;s school
             </h2>
             <p className="mt-3 text-sm text-muted-foreground">
-              Request an introduction package or recommend JAAGR Mind to your school administration.
+              Request an introduction package or recommend Jaagr Mind to your school administration.
             </p>
             <div className="mt-8 flex justify-center gap-3">
               <Link

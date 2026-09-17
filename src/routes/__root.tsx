@@ -76,27 +76,49 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "JAAGR Mind: Emotional Fitness System for Indian Schools" },
+      { title: "Jaagr Mind: Emotional Fitness System for Indian Schools" },
       {
         name: "description",
         content:
-          "JAAGR Mind helps Indian schools notice students who need support earlier, equip every teacher to respond with confidence, and build emotional strength into everyday school life.",
+          "Jaagr Mind helps Indian schools notice students who need support earlier, equip every teacher to respond with confidence, and build emotional strength into everyday school life.",
       },
-      { name: "author", content: "JAAGR Mind" },
+      { name: "author", content: "Jaagr Mind" },
       {
         property: "og:title",
-        content: "JAAGR Mind: Emotional Fitness System for Indian Schools",
+        content: "Jaagr Mind: Emotional Fitness System for Indian Schools",
       },
       {
         property: "og:description",
         content:
-          "JAAGR Mind helps Indian schools notice students who need support earlier, equip every teacher to respond with confidence, and build emotional strength into everyday school life.",
+          "Jaagr Mind helps Indian schools notice students who need support earlier, equip every teacher to respond with confidence, and build emotional strength into everyday school life.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@jaagrmind" },
     ],
     links: [
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.cdnfonts.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.cdnfonts.com/css/gotham-rounded",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito:ital,wght@0,300..900;1,300..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
