@@ -3,10 +3,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   CheckCircle2,
+  FileCheck2,
   Heart,
   Home,
   Lock,
   MessageCircle,
+  MonitorSmartphone,
   RefreshCw,
   ShieldCheck,
   Sparkles,
@@ -60,19 +62,22 @@ const DINNER_PROMPTS = [
 
 const PARENT_PILLARS = [
   {
-    icon: MessageCircle,
-    title: "Shared Emotional Vocabulary",
-    desc: "When schools and homes use the same concepts (Pulse, Sparks, Grounding), children find it much easier to express how they feel without defensive barriers.",
+    icon: Sparkles,
+    title: "Dinner Conversation Prompts",
+    badge: "Family Connection",
+    desc: "Get weekly, non-confrontational conversation sparks that replace 'How was school? - Fine' with genuine connection.",
   },
   {
-    icon: Heart,
-    title: "Care, Not Judgment",
-    desc: "Adolescent brains undergo massive rewiring. Jaagr helps parents understand natural emotional waves during middle and high school with empathy.",
+    icon: FileCheck2,
+    title: "Emotional Growth Milestones",
+    badge: "Skill Milestones",
+    desc: "Understand the positive emotional skills your child is practising in school, from grounding to emotional regulation.",
   },
   {
-    icon: Lock,
-    title: "Trust Over Surveillance",
-    desc: "We don't spy on your children. Respecting their personal reflection space teaches them autonomy and encourages them to share with you willingly.",
+    icon: MonitorSmartphone,
+    title: "Parent Guidance Guides",
+    badge: "Psychologist-Backed",
+    desc: "Access bite-sized, psychologist-backed insights on teenage stress, peer dynamics and exam anxiety.",
   },
 ];
 
@@ -218,15 +223,18 @@ export function ParentsPage() {
           </div>
         </section>
 
-        {/* THREE CORE PILLARS */}
+        {/* THREE CORE PARENT PILLARS */}
         <section className="relative py-24 lg:py-32">
           <div className="shell">
             <div className="max-w-3xl">
               <Reveal>
-                <Eyebrow>Why parents appreciate Jaagr</Eyebrow>
+                <Eyebrow>Fits the home routine</Eyebrow>
                 <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">
-                  Supporting your child without adding pressure
+                  Designed for real school life: Parents
                 </h2>
+                <p className="mt-3 text-base text-muted-foreground">
+                  Supporting your child without adding pressure, anxiety, or invasive surveillance.
+                </p>
               </Reveal>
             </div>
 
@@ -235,10 +243,15 @@ export function ParentsPage() {
                 const Icon = p.icon;
                 return (
                   <Reveal key={p.title} delay={i * 0.1}>
-                    <div className="surface flex flex-col h-full rounded-3xl p-7">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                        <Icon className="h-6 w-6" />
-                      </span>
+                    <div className="surface flex flex-col h-full rounded-3xl p-7 hover:border-primary/50 transition-colors">
+                      <div className="flex items-center justify-between">
+                        <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                          <Icon className="h-6 w-6" />
+                        </span>
+                        <span className="rounded-full bg-secondary px-3 py-1 text-[0.7rem] font-bold text-muted-foreground uppercase tracking-wider">
+                          {p.badge}
+                        </span>
+                      </div>
                       <h3 className="mt-6 text-xl font-bold">{p.title}</h3>
                       <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                     </div>

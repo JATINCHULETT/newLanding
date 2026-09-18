@@ -378,12 +378,16 @@ export function StudentsPage() {
             <div className="max-w-3xl">
               <Reveal>
                 <div className="flex items-center gap-2">
-                  <Eyebrow>What you get with Jaagr</Eyebrow>
+                  <Eyebrow>Fits the student day</Eyebrow>
                   <JaagrThreeLines className="h-4 w-5 text-primary" />
                 </div>
                 <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">
-                  Three tools built specifically for students
+                  Designed for real school life: Students
                 </h2>
+                <p className="mt-3 text-base text-muted-foreground">
+                  Three tools built specifically for students. 60-second neuroscience routines with
+                  zero homework.
+                </p>
               </Reveal>
             </div>
 

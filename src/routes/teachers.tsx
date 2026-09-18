@@ -64,21 +64,24 @@ const STRATEGIES = [
   },
 ];
 
-const TEACHER_BENEFITS = [
+const TEACHER_PILLARS = [
   {
-    icon: Clock4,
-    title: "Zero Extra Workload",
-    desc: "No lesson plans to rewrite, no tests to grade, no complex psychological jargon. Students check in autonomously in 60 seconds.",
+    icon: Eye,
+    title: "Jaagr Insights",
+    desc: "Identify students who may need additional support through simple classroom wellbeing insights.",
+    badge: "Early Identification",
   },
   {
     icon: Compass,
-    title: "Practical Next Steps",
-    desc: "Noticing an emotional shift is only useful if you know how to respond. Jaagr pairs every pattern with a concrete, 2-minute strategy.",
+    title: "Guided Support",
+    desc: "Access practical, classroom-ready strategies that help teachers respond with confidence.",
+    badge: "Classroom Ready",
   },
   {
-    icon: HeartHandshake,
-    title: "Not Therapy. Training.",
-    desc: "Teachers are educators, not clinicians. Jaagr provides preventive, non-clinical skill training so you feel confident in your role.",
+    icon: Clock4,
+    title: "Built Into The School Day",
+    desc: "Designed to fit naturally into existing routines with no additional workload.",
+    badge: "Zero Extra Workload",
   },
 ];
 
@@ -166,22 +169,30 @@ export function TeachersPage() {
           <div className="shell">
             <div className="max-w-3xl">
               <Reveal>
-                <Eyebrow>Built for everyday educators</Eyebrow>
+                <Eyebrow>Fits the timetable you already have</Eyebrow>
                 <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">
-                  Designed to respect your time and energy
+                  Designed for real school life: Teachers
                 </h2>
+                <p className="mt-3 text-base text-muted-foreground">
+                  Simple for teachers. Actionable in classrooms. Zero grading paperwork.
+                </p>
               </Reveal>
             </div>
 
             <div className="mt-12 grid gap-8 md:grid-cols-3">
-              {TEACHER_BENEFITS.map((b, i) => {
+              {TEACHER_PILLARS.map((b, i) => {
                 const Icon = b.icon;
                 return (
                   <Reveal key={b.title} delay={i * 0.1}>
-                    <div className="surface flex flex-col h-full rounded-3xl p-7">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-mint/20 text-mint-foreground">
-                        <Icon className="h-6 w-6" />
-                      </span>
+                    <div className="surface flex flex-col h-full rounded-3xl p-7 hover:border-primary/50 transition-colors">
+                      <div className="flex items-center justify-between">
+                        <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-mint/20 text-mint-foreground">
+                          <Icon className="h-6 w-6" />
+                        </span>
+                        <span className="rounded-full bg-secondary px-3 py-1 text-[0.7rem] font-bold text-muted-foreground uppercase tracking-wider">
+                          {b.badge}
+                        </span>
+                      </div>
                       <h3 className="mt-6 text-xl font-bold">{b.title}</h3>
                       <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
                     </div>
