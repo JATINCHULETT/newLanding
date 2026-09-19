@@ -19,6 +19,7 @@ import { Footer } from "@/components/site/Footer";
 import { OrganicDecorations } from "@/components/site/OrganicDecorations";
 import { Eyebrow, Reveal } from "@/lib/motion-primitives";
 import { cn } from "@/lib/utils";
+import { openExpertModal } from "@/components/site/ExpertConsultationModal";
 
 const TITLE = "Jaagr for Teachers: Classroom Wellbeing Insights with Zero Extra Workload";
 const DESCRIPTION =
@@ -131,14 +132,13 @@ export function TeachersPage() {
 
             <Reveal delay={0.18}>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Link
-                  to="/"
-                  hash="book-demo"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-105"
+                <a
+                  href="https://app.jaagrmind.com"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-105 cursor-pointer"
                 >
-                  Book a School Demo
+                  Get Started
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
+                </a>
                 <a
                   href="#strategies"
                   className="inline-flex items-center justify-center rounded-full border border-border bg-card px-7 py-4 text-base font-semibold text-foreground transition-colors hover:bg-secondary"
@@ -280,13 +280,13 @@ export function TeachersPage() {
               Schedule a 20-minute school demonstration to see how Jaagr supports your staff.
             </p>
             <div className="mt-8 flex justify-center gap-3">
-              <Link
-                to="/"
-                hash="book-demo"
-                className="rounded-full bg-primary px-8 py-4 text-sm font-bold text-primary-foreground shadow-lg hover:bg-primary/90 transition-transform hover:scale-105"
+              <button
+                type="button"
+                onClick={openExpertModal}
+                className="rounded-full bg-primary px-8 py-4 text-sm font-bold text-primary-foreground shadow-lg hover:bg-primary/90 transition-transform hover:scale-105 cursor-pointer"
               >
-                Book a School Demo
-              </Link>
+                Request A Call
+              </button>
             </div>
           </div>
         </section>

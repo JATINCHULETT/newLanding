@@ -3,6 +3,7 @@ import { HeroParallax, type ParallaxProduct } from "@/components/ui/hero-paralla
 import { Eyebrow, Reveal } from "@/lib/motion-primitives";
 import { JaagrThreeLines, OrganicDecorations } from "@/components/site/OrganicDecorations";
 import { ArrowRight, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { openExpertModal } from "@/components/site/ExpertConsultationModal";
 
 import studentHeroImg from "@/assets/student-hero-banner.png";
 import studentMindfulnessImg from "@/assets/student-mindfulness.jpg";
@@ -186,13 +187,14 @@ export function HeroParallaxShowcase() {
 
       <Reveal delay={0.18}>
         <div className="mt-8 flex items-center justify-center gap-4">
-          <a
-            href="/#book-demo"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-bold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:scale-105 hover:bg-primary/90"
+          <button
+            type="button"
+            onClick={openExpertModal}
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-bold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:scale-105 hover:bg-primary/90 cursor-pointer"
           >
-            See Live School Demo
+            Request a Call
             <ArrowRight className="h-4 w-4" />
-          </a>
+          </button>
           <a
             href="/students"
             className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card/80 px-6 py-3 text-sm font-semibold text-foreground hover:bg-secondary transition-colors"
@@ -323,13 +325,14 @@ function MobileEcosystemShowcase({ products }: { products: ParallaxProduct[] }) 
 
         <Reveal delay={0.14}>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="/#book-demo"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-xs sm:text-sm font-bold text-primary-foreground shadow-sm hover:bg-primary/90 transition-all"
+            <button
+              type="button"
+              onClick={openExpertModal}
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-xs sm:text-sm font-bold text-primary-foreground shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
             >
-              See Live School Demo
+              Request a Call
               <ArrowRight className="h-3.5 w-3.5" />
-            </a>
+            </button>
             <a
               href="/students"
               className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2.5 text-xs sm:text-sm font-semibold text-foreground hover:bg-secondary transition-colors"

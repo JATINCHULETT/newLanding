@@ -1,5 +1,7 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "./Logo";
+import { openExpertModal } from "@/components/site/ExpertConsultationModal";
+
 
 const COLUMNS = [
   {
@@ -8,7 +10,7 @@ const COLUMNS = [
       { label: "Why Jaagr", href: "/#why-jaagr" },
       { label: "How It Works", href: "/#how-it-works" },
       { label: "About Us", href: "/#about-us" },
-      { label: "Get Started", href: "https://application.jaagrmind.com" },
+      { label: "Get Started", href: "https://app.jaagrmind.com" },
     ],
   },
   {
@@ -81,12 +83,13 @@ export function Footer() {
                 <span>India</span>
               </li>
             </ul>
-            <a
-              href="/#book-demo"
+            <button
+              type="button"
+              onClick={openExpertModal}
               className="mt-6 inline-flex rounded-full bg-mint px-5 py-3 text-sm font-semibold text-mint-foreground transition-transform duration-300 hover:-translate-y-0.5"
             >
               Request A Call
-            </a>
+            </button>
           </div>
         </div>
 

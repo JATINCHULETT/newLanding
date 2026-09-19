@@ -17,6 +17,7 @@ import {
 import { Eyebrow, Reveal } from "@/lib/motion-primitives";
 import { JaagrThreeLines, OrganicDecorations } from "@/components/site/OrganicDecorations";
 import { PlatformBrowser } from "./PlatformBrowser";
+import { openExpertModal } from "@/components/site/ExpertConsultationModal";
 
 export function PlatformExperience() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -123,13 +124,14 @@ export function PlatformExperience() {
 
         {/* Bottom Call to Action */}
         <div className="mt-12 text-center">
-          <a
-            href="/#book-demo"
+          <button
+            type="button"
+            onClick={openExpertModal}
             className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-bold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:scale-105 hover:bg-primary/90"
           >
             <span>Request a Live Demo for Your School</span>
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </button>
         </div>
       </div>
     </section>

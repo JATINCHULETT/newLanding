@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Reveal, TiltCard } from "@/lib/motion-primitives";
 import { OrganicDecorations } from "@/components/site/OrganicDecorations";
+import { openExpertModal } from "@/components/site/ExpertConsultationModal";
 
 const CARDS = [
   {
@@ -83,13 +84,14 @@ export function TrustSection() {
 
             <Reveal delay={0.18}>
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <a
-                  href="#demo"
-                  className="inline-flex items-center gap-2.5 rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:scale-[1.02] hover:bg-primary/90"
+                <button
+                  type="button"
+                  onClick={openExpertModal}
+                  className="inline-flex items-center gap-2.5 rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:scale-[1.02] hover:bg-primary/90 cursor-pointer"
                 >
-                  Book a School Demo
+                  Request A Call
                   <ArrowRight className="h-4 w-4" aria-hidden />
-                </a>
+                </button>
               </div>
             </Reveal>
 

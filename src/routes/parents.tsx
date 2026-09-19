@@ -155,13 +155,12 @@ export function ParentsPage() {
                   Try a Conversation Starter
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
-                <Link
-                  to="/"
-                  hash="book-demo"
+                <a
+                  href="https://app.jaagrmind.com"
                   className="inline-flex items-center justify-center rounded-full border border-border bg-card px-7 py-4 text-base font-semibold text-foreground transition-colors hover:bg-secondary"
                 >
-                  Request a School Pilot
-                </Link>
+                  Get Started
+                </a>
               </div>
             </Reveal>
 

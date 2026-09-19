@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, Check, Paperclip, Download, X, ShieldCheck } from "lucide-react";
 import { Eyebrow, Reveal } from "@/lib/motion-primitives";
+import { openExpertModal } from "@/components/site/ExpertConsultationModal";
 
 const SUPPORTS = [
   "Structured implementation",
@@ -163,13 +164,14 @@ export function CBSESection() {
 
               <Reveal delay={0.2}>
                 <div className="mt-10 flex flex-wrap items-center gap-3">
-                  <a
-                    href="#book-demo"
-                    className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-900 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-slate-100 shadow-sm"
+                  <button
+                    type="button"
+                    onClick={openExpertModal}
+                    className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-900 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-slate-100 shadow-sm cursor-pointer"
                   >
-                    See How Jaagr Supports Schools
+                    Request a Call
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </a>
+                  </button>
 
                   <button
                     type="button"
