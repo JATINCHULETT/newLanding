@@ -49,6 +49,7 @@ export function DemoForm() {
     setSubmittedEmail(email);
 
     try {
+      const rawMessage = (fd.get("message") as string)?.trim();
       await submitCallRequest({
         data: {
           name: (fd.get("name") as string) || "",
@@ -58,8 +59,8 @@ export function DemoForm() {
           strength: (fd.get("strength") as string) || "",
           email: email,
           phone: (fd.get("phone") as string) || "",
-          message: (fd.get("message") as string) || undefined,
           source: "demo_form",
+          ...(rawMessage ? { message: rawMessage } : {}),
         },
       });
       setSent(true);
