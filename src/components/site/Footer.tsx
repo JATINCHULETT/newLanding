@@ -66,8 +66,8 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm opacity-80">
               <li className="flex items-center gap-2.5">
                 <Mail className="h-4 w-4 text-mint" aria-hidden />
-                <a href="mailto:hello@jaagrmind.com" className="hover:opacity-100">
-                  hello@jaagrmind.com
+                <a href="mailto:support@jaagrmind.com" className="hover:opacity-100">
+                  support@jaagrmind.com
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
@@ -85,7 +85,7 @@ export function Footer() {
               href="/#book-demo"
               className="mt-6 inline-flex rounded-full bg-mint px-5 py-3 text-sm font-semibold text-mint-foreground transition-transform duration-300 hover:-translate-y-0.5"
             >
-              Book a School Demo
+              Request A Call
             </a>
           </div>
         </div>

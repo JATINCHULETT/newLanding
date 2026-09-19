@@ -6,11 +6,10 @@ import { Ticker } from "@/components/site/Ticker";
 import { ProblemSection } from "@/components/site/ProblemSection";
 import { WhyJaagr } from "@/components/site/WhyJaagr";
 import { JaagrFramework } from "@/components/site/JaagrFramework";
-import { RealSchoolLife } from "@/components/site/RealSchoolLife";
+import { PlatformExperience } from "@/components/site/PlatformExperience";
 import { HowItWorks } from "@/components/site/HowItWorks";
 import { SchoolEcosystem } from "@/components/site/SchoolEcosystem";
 import { HeroParallaxShowcase } from "@/components/site/HeroParallaxShowcase";
-import { ProductExperience } from "@/components/site/ProductExperience";
 import { ImpactStory } from "@/components/site/ImpactStory";
 import { CBSESection } from "@/components/site/CBSESection";
 import { TrustSection } from "@/components/site/TrustSection";
@@ -46,11 +45,10 @@ function Index() {
         <ProblemSection />
         <WhyJaagr />
         <JaagrFramework />
-        <RealSchoolLife />
+        <PlatformExperience />
         <HowItWorks />
         <SchoolEcosystem />
         <HeroParallaxShowcase />
-        <ProductExperience />
         <ImpactStory />
         <CBSESection />
         <TrustSection />

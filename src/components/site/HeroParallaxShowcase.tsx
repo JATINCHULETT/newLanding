@@ -11,6 +11,14 @@ import storyClassroomImg from "@/assets/story-classroom.png";
 import heroEcosystemImg from "@/assets/hero-ecosystem.png";
 import emotionsMadeEasyImg from "@/assets/emotions-made-easy.png";
 import schoolGatePosterImg from "@/assets/school-gate-poster.jpg";
+import sensoryGroundingImg from "@/assets/sensory-grounding.jpg";
+import teacherPlaybookImg from "@/assets/teacher-playbook.jpg";
+import counselorSessionImg from "@/assets/counselor-session.jpg";
+import familyDinnerImg from "@/assets/family-dinner.jpg";
+import muscleReleaseImg from "@/assets/muscle-release.jpg";
+import deepStudyImg from "@/assets/deep-study.jpg";
+import studentPrivacyImg from "@/assets/student-privacy.jpg";
+import staffroomCultureImg from "@/assets/staffroom-culture.jpg";
 
 const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
   // Row 1: Student & Classroom Moments
@@ -37,8 +45,7 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
     category: "Regulation Tool",
     badge: "Grounding",
     link: "/students",
-    thumbnail:
-      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop",
+    thumbnail: sensoryGroundingImg,
   },
   {
     title: "Exam Resilience Journey",
@@ -66,8 +73,7 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
     category: "Educator Toolkit",
     badge: "Practical",
     link: "/teachers",
-    thumbnail:
-      "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop",
+    thumbnail: teacherPlaybookImg,
   },
   {
     title: "Counselor Escalation Hub",
@@ -76,8 +82,7 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
     category: "Early Support",
     badge: "Confidential",
     link: "/#book-demo",
-    thumbnail:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
+    thumbnail: counselorSessionImg,
   },
   {
     title: "Parent Dinner Sparks",
@@ -85,8 +90,7 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
     category: "Family Trust",
     badge: "At Home",
     link: "/parents",
-    thumbnail:
-      "https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?q=80&w=800&auto=format&fit=crop",
+    thumbnail: familyDinnerImg,
   },
   {
     title: "Progressive Muscle Release",
@@ -95,8 +99,7 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
     category: "Somatic Reset",
     badge: "Bite-Sized",
     link: "/students",
-    thumbnail:
-      "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop",
+    thumbnail: muscleReleaseImg,
   },
   {
     title: "The Emotional Vocabulary Wheel",
@@ -124,8 +127,7 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
     category: "Academic Fitness",
     badge: "Focus",
     link: "/students",
-    thumbnail:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop",
+    thumbnail: deepStudyImg,
   },
   {
     title: "100% Student-First Privacy",
@@ -133,8 +135,7 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
     category: "Trust Standard",
     badge: "No Spying",
     link: "/#why-jaagr",
-    thumbnail:
-      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop",
+    thumbnail: studentPrivacyImg,
   },
   {
     title: "Staff Room Wellbeing Culture",
@@ -143,8 +144,7 @@ const JAAGR_PARALLAX_ITEMS: ParallaxProduct[] = [
     category: "Teacher Care",
     badge: "Community",
     link: "/teachers",
-    thumbnail:
-      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+    thumbnail: staffroomCultureImg,
   },
   {
     title: "Annual School Growth Review",
