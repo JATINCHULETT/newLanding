@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring, MotionValue } from "motion/react";
+import React, { useRef, useEffect } from "react";
+import { motion, useTransform, useSpring, useMotionValue, MotionValue } from "motion/react";
 
 export interface ParallaxProduct {
   title: string;
@@ -24,27 +24,56 @@ export const HeroParallax = ({
   const thirdRow = products.slice(10, 15);
   const ref = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
+  const scrollYProgress = useMotionValue(0);
 
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
+  useEffect(() => {
+    let ticking = false;
+    const updateScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (!ref.current) return;
+          const rect = ref.current.getBoundingClientRect();
+          const vh = window.innerHeight;
+          // Start responsive motion as the header and top arrive near top of screen
+          const start = vh * 0.2;
+          const totalDistance = rect.height - vh * 0.4;
+          if (totalDistance > 0) {
+            const current = start - rect.top;
+            const progress = Math.min(Math.max(current / totalDistance, 0), 1);
+            scrollYProgress.set(progress);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
 
-  const translateX = useSpring(useTransform(scrollYProgress, [0, 1], [0, 900]), springConfig);
+    window.addEventListener("scroll", updateScroll, { passive: true });
+    window.addEventListener("resize", updateScroll);
+    updateScroll();
+
+    return () => {
+      window.removeEventListener("scroll", updateScroll);
+      window.removeEventListener("resize", updateScroll);
+    };
+  }, [scrollYProgress]);
+
+  const springConfig = { stiffness: 260, damping: 28, bounce: 80 };
+
+  const translateX = useSpring(useTransform(scrollYProgress, [0, 1], [0, 850]), springConfig);
   const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -900]),
+    useTransform(scrollYProgress, [0, 1], [0, -850]),
     springConfig,
   );
-  const rotateX = useSpring(useTransform(scrollYProgress, [0, 0.25], [15, 0]), springConfig);
-  const opacity = useSpring(useTransform(scrollYProgress, [0, 0.2], [0.2, 1]), springConfig);
-  const rotateZ = useSpring(useTransform(scrollYProgress, [0, 0.25], [16, 0]), springConfig);
-  const translateY = useSpring(useTransform(scrollYProgress, [0, 0.25], [-550, 250]), springConfig);
+  const rotateX = useSpring(useTransform(scrollYProgress, [0, 0.45], [15, 0]), springConfig);
+  const opacity = useSpring(useTransform(scrollYProgress, [0, 0.25], [0.25, 1]), springConfig);
+  const rotateZ = useSpring(useTransform(scrollYProgress, [0, 0.45], [16, 0]), springConfig);
+  const translateY = useSpring(useTransform(scrollYProgress, [0, 0.55], [-500, 220]), springConfig);
 
   return (
     <div
       ref={ref}
-      className={`min-h-[220vh] lg:min-h-[260vh] py-24 sm:py-32 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d] ${className}`}
+      className={`min-h-[160vh] lg:min-h-[190vh] py-20 sm:py-28 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d] ${className}`}
     >
       {header || <DefaultHeader />}
       <motion.div

@@ -74,11 +74,11 @@ export function Navbar() {
 
           {/* Sign In Button */}
           <a
-            href="https://login.jaagrmind.com"
+            href="https://app.jaagrmind.com"
             className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-card/80 px-3.5 py-1.5 text-xs font-semibold text-foreground transition-all duration-300 hover:border-primary/50 hover:bg-secondary hover:text-primary active:scale-95 shadow-sm sm:px-4 sm:py-2 sm:text-sm"
           >
             <LogIn className="h-3.5 w-3.5 text-primary" />
-            <span>Sign In</span>
+            <span>Get Started</span>
           </a>
 
           <button

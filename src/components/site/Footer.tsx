@@ -8,7 +8,7 @@ const COLUMNS = [
       { label: "Why Jaagr", href: "/#why-jaagr" },
       { label: "How It Works", href: "/#how-it-works" },
       { label: "About Us", href: "/#about-us" },
-      { label: "Sign In", href: "https://login.jaagrmind.com" },
+      { label: "Get Started", href: "https://application.jaagrmind.com" },
     ],
   },
   {

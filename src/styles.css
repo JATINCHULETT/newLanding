@@ -194,6 +194,7 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    zoom: 0.8;
   }
 
   body {
@@ -262,12 +263,10 @@
 }
 
 @utility text-gradient {
-  background: linear-gradient(
-    100deg,
-    var(--color-primary) 0%,
-    var(--color-primary-soft) 60%,
-    var(--color-primary) 100%
-  );
+  background: linear-gradient(100deg,
+      var(--color-primary) 0%,
+      var(--color-primary-soft) 60%,
+      var(--color-primary) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -279,10 +278,12 @@
 }
 
 @keyframes jm-float {
+
   0%,
   100% {
     transform: translate3d(0, 0, 0);
   }
+
   50% {
     transform: translate3d(0, -14px, 0);
   }
@@ -292,6 +293,7 @@
   from {
     transform: translate3d(0, 0, 0);
   }
+
   to {
     transform: translate3d(-50%, 0, 0);
   }
@@ -315,6 +317,7 @@
   html {
     scroll-behavior: auto;
   }
+
   *,
   *::before,
   *::after {

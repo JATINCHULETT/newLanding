@@ -20,7 +20,7 @@ export function ExpertFloatingBar() {
           </span>
 
           <span className="text-white/80 hidden md:inline whitespace-nowrap text-xs">
-            Meet our expert! Talk to us at
+            Talk to our expert at
           </span>
           <span className="text-white/80 hidden sm:inline md:hidden whitespace-nowrap text-xs">
             Talk to expert:

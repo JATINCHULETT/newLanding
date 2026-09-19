@@ -1,7 +1,8 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useTransform } from "motion/react";
 import { GraduationCap, Heart, School, Users, UserCog } from "lucide-react";
 import { Eyebrow, Reveal } from "@/lib/motion-primitives";
+import { useElementScrollProgress } from "@/hooks/use-element-scroll-progress";
 
 const NODES = [
   { icon: GraduationCap, label: "Students", note: "Daily skills" },
@@ -13,9 +14,10 @@ const NODES = [
 
 export function SchoolEcosystem() {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 78%", "end 55%"],
+  const scrollYProgress = useElementScrollProgress(ref, {
+    startViewportPercent: 0.78,
+    endViewportPercent: 0.55,
+    targetOrigin: "end",
   });
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 

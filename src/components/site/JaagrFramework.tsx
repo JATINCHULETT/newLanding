@@ -1,7 +1,8 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useTransform } from "motion/react";
 import { Eyebrow, Reveal } from "@/lib/motion-primitives";
 import { OrganicDecorations } from "@/components/site/OrganicDecorations";
+import { useElementScrollProgress } from "@/hooks/use-element-scroll-progress";
 
 const STEPS = [
   {
@@ -33,9 +34,10 @@ const STEPS = [
 
 function Step({ step, index }: { step: (typeof STEPS)[number]; index: number }) {
   const ref = useRef<HTMLLIElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 82%", "start 42%"],
+  const scrollYProgress = useElementScrollProgress(ref, {
+    startViewportPercent: 0.85,
+    endViewportPercent: 0.45,
+    targetOrigin: "start",
   });
   const opacity = useTransform(scrollYProgress, [0, 1], [0.35, 1]);
   const x = useTransform(scrollYProgress, [0, 1], [24, 0]);
@@ -58,9 +60,10 @@ function Step({ step, index }: { step: (typeof STEPS)[number]; index: number }) 
 
 export function JaagrFramework() {
   const trackRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: trackRef,
-    offset: ["start 70%", "end 60%"],
+  const scrollYProgress = useElementScrollProgress(trackRef, {
+    startViewportPercent: 0.72,
+    endViewportPercent: 0.55,
+    targetOrigin: "end",
   });
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
